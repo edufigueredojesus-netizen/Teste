@@ -1,0 +1,967 @@
+<title>Caderno do Dia 3 · SESP</title>
+<meta name="description" content="Material de aprofundamento do Dia 3 — organização, validação, limpeza, visualização honesta, ETL e Power Query aplicados à SESP/MT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+:root{
+  --paper:#f4f5f2; --surface:#ffffff; --raised:#fbfbf9;
+  --ink:#191d21; --ink-soft:#565d64; --ink-faint:#8b9299;
+  --line:#d9dcd6; --line-strong:#c3c7c0;
+  --accent:#1f4b8f; --accent-soft:#e9f0f8; --accent-ink:#1f4b8f;
+  --verde:#1c7a4a; --verde-soft:#e4f2e9;
+  --ambar:#9c6a12; --ambar-soft:#f6edda;
+  --vermelho:#ad332e; --vermelho-soft:#f7e6e4;
+  --code-bg:#1a2230; --code-ink:#e9edf2; --code-comment:#8fa3bd; --code-accent:#84b4ee; --code-str:#e0a878;
+  --shadow:0 1px 2px rgba(20,25,30,.06),0 8px 24px -12px rgba(20,25,30,.14);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme:dark){
+    --paper:#111419; --surface:#191d24; --raised:#1f242c;
+    --ink:#e7e9eb; --ink-soft:#a1a9b1; --ink-faint:#727a83;
+    --line:#2b313a; --line-strong:#3a424d;
+    --accent:#6ba3e6; --accent-soft:#182534; --accent-ink:#9cc4f2;
+    --verde:#4dbd83; --verde-soft:#15271e;
+    --ambar:#d6a542; --ambar-soft:#2a2213;
+    --vermelho:#e2695f; --vermelho-soft:#2c1917;
+    --code-bg:#0c1119; --code-ink:#e9edf2; --code-comment:#7f92ab;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111419; --surface:#191d24; --raised:#1f242c;
+  --ink:#e7e9eb; --ink-soft:#a1a9b1; --ink-faint:#727a83;
+  --line:#2b313a; --line-strong:#3a424d;
+  --accent:#6ba3e6; --accent-soft:#182534; --accent-ink:#9cc4f2;
+  --verde:#4dbd83; --verde-soft:#15271e;
+  --ambar:#d6a542; --ambar-soft:#2a2213;
+  --vermelho:#e2695f; --vermelho-soft:#2c1917;
+  --code-bg:#0c1119; --code-ink:#e9edf2; --code-comment:#7f92ab;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:1.055rem; line-height:1.62; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+.col{max-width:47rem}
+
+h1,h2,h3,h4,.lbl,nav,th,.f,.tag,.pill,.num,.step b{font-family:"Archivo","Segoe UI",system-ui,sans-serif}
+h2,h3,h4{text-wrap:balance;line-height:1.2}
+.lbl{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+header.top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--paper))}
+header.top .wrap{padding-top:2.6rem;padding-bottom:2.2rem}
+.kicker{display:flex;gap:.6rem;align-items:center;color:var(--accent-ink);font-weight:600;
+  font-family:"Archivo",sans-serif;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase}
+.kicker::before{content:"";width:26px;height:2px;background:var(--accent);display:block}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700;margin:.5rem 0 .4rem;letter-spacing:-.015em}
+header.top p.sub{margin:.2rem 0 0;color:var(--ink-soft);max-width:44rem;font-size:1.12rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.4rem;font-family:"Archivo",sans-serif;
+  font-size:.82rem;color:var(--ink-soft)}
+.meta span{display:inline-flex;align-items:center;gap:.4rem}
+.meta b{color:var(--ink);font-weight:600}
+
+.shell{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:1000px){
+  .shell{grid-template-columns:240px 1fr;gap:3.2rem;align-items:start}
+  nav.toc{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:2.4rem 0;font-size:.83rem}
+}
+nav.toc{font-family:"Archivo",sans-serif}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;color:var(--ink-soft);text-decoration:none;padding:.32rem 0;border-left:2px solid var(--line);
+  padding-left:.8rem;transition:color .15s,border-color .15s}
+nav.toc a:hover{color:var(--accent-ink);border-color:var(--accent)}
+nav.toc .grp{margin-top:.9rem;color:var(--ink-faint);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding-left:.8rem}
+main{padding:2.2rem 0 5rem;min-width:0}
+
+section{padding:2.4rem 0;border-top:1px solid var(--line)}
+section:first-child{border-top:none}
+.secnum{font-family:"Archivo",sans-serif;font-weight:700;color:var(--accent);font-size:.9rem;letter-spacing:.05em}
+h2{font-size:clamp(1.45rem,3.4vw,2rem);font-weight:700;margin:.3rem 0 .8rem;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:600;margin:2rem 0 .5rem}
+h4{font-size:1.02rem;margin:1.4rem 0 .3rem}
+p{margin:.7rem 0}
+a{color:var(--accent-ink)}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+
+/* code blocks: fórmula (fx) e Power Query (M) */
+.f{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;background:var(--code-bg);color:var(--code-ink);
+  border-radius:8px;padding:.85rem 1rem;margin:.8rem 0;font-size:.84rem;line-height:1.7;overflow-x:auto;position:relative;
+  border:1px solid rgba(255,255,255,.06)}
+.f::before{content:"fx";position:absolute;top:0;right:0;font-size:.62rem;font-weight:700;letter-spacing:.1em;
+  color:var(--code-comment);background:rgba(255,255,255,.05);padding:.15rem .5rem;border-radius:0 7px 0 7px}
+.f.m::before{content:"M · Power Query"}
+.f.ui::before{content:"Excel"}
+.f .c{color:var(--code-comment)} .f .k{color:var(--code-accent)} .f .s{color:var(--code-str)} .f b{color:#fff}
+code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:var(--accent-soft);color:var(--accent-ink);
+  padding:.08em .4em;border-radius:4px}
+
+.ficha{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem;margin:1.1rem 0;
+  box-shadow:var(--shadow);border-left:3px solid var(--accent)}
+.ficha.g{border-left-color:var(--verde)} .ficha.a{border-left-color:var(--ambar)} .ficha.r{border-left-color:var(--vermelho)}
+.ficha h4{font-size:1.06rem;margin:0 0 .3rem}
+.ficha p{margin:.5rem 0}
+
+.callout{border-radius:8px;padding:.7rem .9rem;margin:.75rem 0;font-size:.95rem;font-family:"Source Serif 4",serif}
+.callout .lbl{display:block;margin-bottom:.15rem}
+.callout.err{background:var(--vermelho-soft);border:1px solid color-mix(in srgb,var(--vermelho) 30%,transparent)}
+.callout.err .lbl{color:var(--vermelho)}
+.callout.tip{background:var(--verde-soft);border:1px solid color-mix(in srgb,var(--verde) 30%,transparent)}
+.callout.tip .lbl{color:var(--verde)}
+.callout.note{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 26%,transparent)}
+.callout.note .lbl{color:var(--accent-ink)}
+
+.tbl{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-family:"Archivo",sans-serif;font-size:.85rem}
+th,td{text-align:left;padding:.55rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--raised);font-weight:600;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+tr:last-child td{border-bottom:none}
+td code{font-size:.9em}
+.num{font-variant-numeric:tabular-nums;text-align:right}
+
+/* passo a passo */
+ol.step{list-style:none;counter-reset:st;margin:1rem 0;padding:0}
+ol.step>li{counter-increment:st;position:relative;padding:.2rem 0 1rem 3rem;border-left:2px solid var(--line);margin-left:1rem}
+ol.step>li::before{content:counter(st);position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;
+  background:var(--accent);color:#fff;font-family:"Archivo",sans-serif;font-weight:700;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center}
+ol.step>li:last-child{border-left-color:transparent}
+ol.step>li .t{font-family:"Archivo",sans-serif;font-weight:600;display:block;margin-bottom:.15rem}
+ol.step>li p{margin:.3rem 0}
+
+.semaforo{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.chip{font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:600;padding:.35rem .7rem;border-radius:999px;
+  display:inline-flex;align-items:center;gap:.45rem}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%}
+.chip.v{background:var(--verde-soft);color:var(--verde)} .chip.v::before{background:var(--verde)}
+.chip.a{background:var(--ambar-soft);color:var(--ambar)} .chip.a::before{background:var(--ambar)}
+.chip.r{background:var(--vermelho-soft);color:var(--vermelho)} .chip.r::before{background:var(--vermelho)}
+
+.ex{background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.3rem 0}
+.ex .tag{display:inline-block;font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);padding:.2rem .55rem;border-radius:5px;margin-bottom:.5rem}
+.ex h4{font-family:"Archivo",sans-serif;margin:.1rem 0 .4rem;font-size:1.08rem}
+details{margin-top:.7rem;border-top:1px dashed var(--line-strong);padding-top:.6rem}
+summary{cursor:pointer;font-family:"Archivo",sans-serif;font-size:.83rem;font-weight:600;color:var(--accent-ink);
+  list-style:none;display:flex;align-items:center;gap:.4rem}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details .body{margin-top:.6rem}
+
+.q{margin:1.3rem 0;padding-left:1rem;border-left:3px solid var(--line-strong)}
+.q p.stem{font-weight:600;margin:.2rem 0 .5rem;font-family:"Archivo",sans-serif;font-size:.98rem}
+.q ol{margin:.3rem 0}
+.q li{margin:.2rem 0}
+
+.pill{display:inline-block;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:600;padding:.15rem .5rem;
+  border-radius:5px;background:var(--accent-soft);color:var(--accent-ink);letter-spacing:.04em}
+kbd{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line-strong);
+  border-bottom-width:2px;border-radius:5px;padding:.1rem .4rem;color:var(--ink)}
+.path{font-family:"JetBrains Mono",monospace;font-size:.82em;color:var(--ink-soft)}
+
+.compare{display:grid;gap:1rem;margin:1.1rem 0}
+@media(min-width:620px){.compare{grid-template-columns:1fr 1fr}}
+.compare>div{border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;background:var(--surface)}
+.compare .bad{border-left:3px solid var(--vermelho)}
+.compare .good{border-left:3px solid var(--verde)}
+.compare h5{font-family:"Archivo",sans-serif;margin:0 0 .4rem;font-size:.9rem}
+.compare .bad h5{color:var(--vermelho)} .compare .good h5{color:var(--verde)}
+
+.chartbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem;margin:1.1rem 0}
+.chartbox figcaption{font-family:"Archivo",sans-serif;font-size:.8rem;color:var(--ink-soft);margin-top:.6rem;text-align:center}
+.chartbox svg{display:block;width:100%;height:auto}
+.chart-ink{stroke:var(--ink-soft)} .chart-grid{stroke:var(--line)}
+text.cl{fill:var(--ink-soft);font-family:"Archivo",sans-serif;font-size:11px}
+text.ct{fill:var(--ink);font-family:"Archivo",sans-serif;font-size:12px;font-weight:600}
+
+.themebtn{position:fixed;bottom:1rem;right:1rem;z-index:20;font-family:"Archivo",sans-serif;font-size:.78rem;
+  background:var(--surface);color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:999px;
+  padding:.4rem .8rem;cursor:pointer;box-shadow:var(--shadow)}
+.pdfbtn{position:fixed;bottom:3.1rem;right:1rem;z-index:20;font-family:"Archivo",sans-serif;font-size:.78rem;
+  background:var(--surface);color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:999px;
+  padding:.4rem .8rem;cursor:pointer;box-shadow:var(--shadow)}
+.themebtn:hover,.pdfbtn:hover{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+.lead{font-size:1.12rem;color:var(--ink-soft)}
+ul.clean{margin:.6rem 0;padding-left:1.1rem}
+ul.clean li{margin:.3rem 0}
+hr.soft{border:none;border-top:1px solid var(--line);margin:1.6rem 0}
+.foot{color:var(--ink-faint);font-size:.85rem;font-family:"Archivo",sans-serif;border-top:1px solid var(--line);
+  padding:2rem 0 3rem;margin-top:2rem}
+
+@page{ margin:16mm 15mm; }
+@media print{
+  :root,:root[data-theme="dark"],:root[data-theme="light"],:root:not([data-theme="light"]){
+    --paper:#fff; --surface:#fff; --raised:#f4f5f2;
+    --ink:#16191d; --ink-soft:#3f464c; --ink-faint:#697079;
+    --line:#c9ccc6; --line-strong:#b1b5ae;
+    --accent:#1f4b8f; --accent-soft:#eef3fa; --accent-ink:#1b427e;
+    --verde:#1a6a41; --verde-soft:#eaf4ee;
+    --ambar:#875c10; --ambar-soft:#f6efdd;
+    --vermelho:#9f2c27; --vermelho-soft:#f8e9e7;
+    --code-bg:#f0f1ee; --code-ink:#1a2230; --code-comment:#5b6a53;
+    --code-accent:#1b427e; --code-str:#8a4b1f; --shadow:none;
+  }
+  html,body{background:#fff}
+  body{font-size:10pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .themebtn,.pdfbtn{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .shell{display:block} nav.toc{display:none} main{padding:0;max-width:none}
+  header.top{border:none;background:#fff} header.top .wrap{padding:0 0 10pt} header.top .sub{font-size:11pt}
+  h1{font-size:21pt} h2{font-size:14pt;break-after:avoid} h3{font-size:11.5pt;break-after:avoid}
+  section{padding:12pt 0;break-inside:auto} section:first-child{padding-top:0}
+  .ficha,.callout,.q,.semaforo,.f,table,.chartbox,.compare>div,ol.step>li,.ex h4,.ex .tag{break-inside:avoid}
+  .ex .tag{break-after:avoid}
+  .ficha,.ex,.chartbox{box-shadow:none}
+  .f{border:1px solid var(--line-strong)} .f::before{display:none} .f b{color:#000}
+  details>summary{list-style:none;font-weight:700;color:var(--accent-ink)}
+  details>summary::before{content:"» "}
+  a{color:var(--accent-ink);text-decoration:none}
+  .foot{break-before:avoid;padding-bottom:0}
+}
+</style>
+
+<button class="pdfbtn" id="pp" aria-label="Salvar em PDF">⤓ salvar PDF</button>
+<button class="themebtn" id="tt" aria-label="Alternar tema">◐ tema</button>
+
+<header class="top">
+  <div class="wrap">
+    <div class="kicker">SESP/MT · Dia 3 · Módulos 4 e 5</div>
+    <h1>Caderno do Dia 3</h1>
+    <p class="sub">Da planilha caótica ao painel de inteligência. Guia prático com o passo a passo de <strong>todos os exercícios</strong>: validação, limpeza, gráficos honestos, mini-painel, ETL e Power Query.</p>
+    <div class="meta">
+      <span><b>Professor</b> Renato Rosa</span>
+      <span><b>Bases</b> datasets/ · bruta, limpa, pasta, painel</span>
+      <span><b>Ferramentas</b> Excel · Power Query · (Power BI no Dia 4)</span>
+      <span><b>Complemento</b> do deck do Dia 3</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap shell">
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#base">00 · As bases de dados</a></li>
+      <li class="grp">Módulo 4 — manhã</li>
+      <li><a href="#gigo">01 · GIGO: por que validar e limpar</a></li>
+      <li><a href="#validacao">02 · Validação de dados na fonte</a></li>
+      <li><a href="#limpeza">03 · Limpeza de dados no Excel</a></li>
+      <li><a href="#duplicatas">04 · Remover duplicatas com segurança</a></li>
+      <li><a href="#grafico">05 · Escolher o gráfico certo</a></li>
+      <li><a href="#mentiras">06 · Gráficos que mentem</a></li>
+      <li><a href="#painel">07 · Mini-painel do comandante</a></li>
+      <li><a href="#menos">08 · Menos é mais</a></li>
+      <li class="grp">Módulo 5 — tarde</li>
+      <li><a href="#excelbi">09 · Excel vs. Power BI</a></li>
+      <li><a href="#etl">10 · ETL: Extract, Transform, Load</a></li>
+      <li><a href="#preetl">11 · Pré-ETL: preparar a base</a></li>
+      <li><a href="#pq">12 · Power Query passo a passo</a></li>
+      <li><a href="#pasta">13 · Consolidar uma pasta inteira</a></li>
+      <li><a href="#conduta">14 · Código de conduta do analista</a></li>
+      <li class="grp">Fecho</li>
+      <li><a href="#quiz">15 · Armadilhas + Quiz</a></li>
+      <li><a href="#prof">16 · Folha de cola e notas do professor</a></li>
+    </ol>
+  </nav>
+
+  <main class="col">
+
+  <!-- 00 -->
+  <section id="base">
+    <div class="secnum">00</div>
+    <h2>As bases de dados</h2>
+    <p class="lead">Todo o Dia 3 gira em torno de uma base que chega <em>suja</em> e sai <em>pronta para decisão</em>. A pasta <code>datasets/</code> tem quatro subpastas — cada exercício diz qual usar.</p>
+
+    <div class="tbl"><table>
+      <tr><th>Pasta / arquivo</th><th>O que é</th><th>Usado em</th></tr>
+      <tr><td><span class="path">bruto/ocorrencias_CIOSP_jan2026_BRUTO.csv</span></td>
+          <td>A base como sai do sistema legado: 130 ocorrências reais <strong>+ 5 duplicatas + 4 linhas em branco + 1 linha “TOTAL GERAL” + 1 data impossível</strong>. Está em <strong>ANSI (Windows-1252)</strong> de propósito — os acentos quebram no Excel.</td>
+          <td>Seções 03, 04, 11, 12</td></tr>
+      <tr><td><span class="path">limpo/ocorrencias_jan2026_LIMPO.csv</span></td>
+          <td>O “depois”: UTF-8, 1 cabeçalho, Data e Hora separadas, tipos e bairros padronizados, sem lixo. É a <strong>meta</strong> do laboratório.</td>
+          <td>Conferência</td></tr>
+      <tr><td><span class="path">consolidacao_pasta/</span></td>
+          <td>12 arquivos <code>efetivo_&lt;unidade&gt;_&lt;mês&gt;.csv</code> — mesmo layout, 6 unidades × 2 meses. Um deles (Rotam, fev) tem uma coluna a mais.</td>
+          <td>Seção 13</td></tr>
+      <tr><td><span class="path">painel/ocorrencias_mensais.csv</span></td>
+          <td>Agregado <strong>limpo</strong>: 576 linhas, 12 meses (fev/2025–jan/2026), 8 bairros, 6 tipos. Colunas: <code>Ano_Mes · Bairro · Regional · Tipo_Ocorrencia · Ocorrencias · Vitimas · Valor_Apreendido_RS · Tempo_Resposta_Medio_Min</code>.</td>
+          <td>Seções 05, 06, 07</td></tr>
+    </table></div>
+
+    <div class="callout note"><span class="lbl">Regra nº 1 do dia</span>
+      Antes de tocar em qualquer base, <strong>faça uma cópia</strong> e guarde o original intacto. A base bruta é a sua evidência de auditoria — o que você mexe é sempre a cópia.</div>
+  </section>
+
+  <!-- 01 -->
+  <section id="gigo">
+    <div class="secnum">01</div>
+    <h2>GIGO: por que validar e limpar</h2>
+    <p><strong>Garbage In, Garbage Out.</strong> Se dado errado entra na base, nenhuma análise depois é confiável — nem no Excel, nem no Power BI. A qualidade de dados tem <strong>três camadas</strong>, e o Dia 3 cobre as duas primeiras:</p>
+
+    <ol class="step">
+      <li><span class="t">Validar na entrada</span><p>Impedir que o erro seja digitado. Listas suspensas, restrição de datas, limites numéricos. <span class="pill">Seção 02</span></p></li>
+      <li><span class="t">Limpar na transformação</span><p>Consertar o que já entrou torto: espaços, maiúsculas, duplicatas, formatos. <span class="pill">Seções 03–04 · 11–13</span></p></li>
+      <li><span class="t">Auditar na saída</span><p>Conferir o resultado contra a fonte antes de publicar. Total de linhas e soma de valores-chave têm que bater. <span class="pill">Seção 14</span></p></li>
+    </ol>
+
+    <div class="callout tip"><span class="lbl">O número que convence o gestor</span>
+      Dados validados na entrada reduzem em até <strong>70%</strong> o tempo gasto depois com limpeza. Validar não é burocracia — é o investimento com o melhor retorno na rotina do analista.</div>
+  </section>
+
+  <!-- 02 -->
+  <section id="validacao">
+    <div class="secnum">02</div>
+    <h2>Validação de dados na fonte</h2>
+    <p>Menu <kbd>Dados</kbd> → <kbd>Validação de Dados</kbd>. Aplica-se a uma coluna inteira <em>antes</em> de alguém preencher.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 2.1</span>
+      <h4>Lista suspensa para “Tipo de Ocorrência”</h4>
+      <p>Objetivo: garantir que ninguém digite “roubo”, “Roub.” ou “ROUBO” — só um valor de uma lista fechada.</p>
+      <ol class="step">
+        <li><span class="t">Monte a lista de referência</span><p>Numa aba separada chamada <code>Listas</code>, digite em A1:A6: <em>Homicídio, Latrocínio, Roubo, Furto, Tráfico de Drogas, Lesão Corporal</em>. Selecione e dê o nome <code>tipos</code> na Caixa de Nome (canto superior esquerdo).</p></li>
+        <li><span class="t">Selecione a coluna a validar</span><p>Na base, clique no cabeçalho da coluna <em>Tipo_Ocorrencia</em> (ex.: F2:F1000).</p></li>
+        <li><span class="t">Abra a Validação</span><p><kbd>Dados</kbd> → <kbd>Validação de Dados</kbd> → aba <em>Configurações</em>. Em <em>Permitir</em>, escolha <strong>Lista</strong>.</p></li>
+        <li><span class="t">Aponte para a lista</span><p>No campo <em>Fonte</em>, digite <code>=tipos</code>. Marque <em>Menu suspenso na célula</em>.</p></li>
+        <li><span class="t">Configure o aviso de erro</span><p>Aba <em>Alerta de erro</em> → estilo <strong>Parar</strong> → mensagem: “Selecione um tipo da lista oficial”. Isso <em>bloqueia</em> a digitação livre.</p></li>
+        <li><span class="t">Teste</span><p>Tente digitar “roubo” na coluna. O Excel recusa. Digite pela setinha: só entra o que está na lista.</p></li>
+      </ol>
+      <details><summary>Variante: lista que se atualiza sozinha</summary>
+      <div class="body"><p>Transforme a lista de referência em Tabela (<kbd>Ctrl</kbd>+<kbd>T</kbd>) e use <code>=INDIRETO("Tabela_tipos[Tipo]")</code> na Fonte. Novos tipos adicionados à tabela aparecem no dropdown automaticamente.</p></div></details>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 2.2</span>
+      <h4>Restrição de data: só passado, nunca 31/02</h4>
+      <ol class="step">
+        <li><span class="t">Selecione a coluna Data</span></li>
+        <li><span class="t">Validação → Permitir: Data</span><p>Em <em>Dados</em>, escolha <strong>menor ou igual a</strong>. Em <em>Data final</em>: <code>=HOJE()</code>.</p></li>
+        <li><span class="t">Alerta de erro “Parar”</span><p>Mensagem: “A data não pode estar no futuro.” Isso já elimina <code>31/02/2026</code> (o Excel nem reconhece como data) e qualquer digitação de ano errado.</p></li>
+        <li><span class="t">Opcional — limite inferior</span><p>Use <strong>entre</strong> <code>=DATA(2020;1;1)</code> e <code>=HOJE()</code> para barrar datas absurdas no passado.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 2.3</span>
+      <h4>Limite numérico: “Idade da Vítima” entre 0 e 120</h4>
+      <ol class="step">
+        <li><span class="t">Selecione a coluna Idade</span></li>
+        <li><span class="t">Validação → Permitir: Número inteiro → entre <code>0</code> e <code>120</code></span></li>
+        <li><span class="t">Alerta “Parar”</span><p>Assim, <code>999</code>, <code>-3</code> e texto não entram. Célula em branco continua permitida (nem toda ocorrência tem vítima) — se quiser exigir preenchimento, isso é outra regra.</p></li>
+      </ol>
+      <div class="callout note"><span class="lbl">Por que isso importa</span>
+        Uma única idade <code>999</code> num campo numérico distorce a <em>média de idade das vítimas</em> de um relatório inteiro. Validar aqui evita corrigir depois.</div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section id="limpeza">
+    <div class="secnum">03</div>
+    <h2>Limpeza de dados no Excel</h2>
+    <p>Agora o dado já entrou torto. Abra <span class="path">bruto/ocorrencias_CIOSP_jan2026_BRUTO.csv</span> e vamos consertar — <strong>na cópia</strong>.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 3.1</span>
+      <h4>Abrir e enxergar os problemas</h4>
+      <ol class="step">
+        <li><span class="t">Abra o arquivo no Excel</span><p>Você verá acentos quebrados (<em>“RELATÃ“RIO”, “CoxipÃ³”</em>) — é a codificação errada (tratada na Seção 11). A 1ª linha é um título, a 2ª está vazia, o cabeçalho real está na linha 3.</p></li>
+        <li><span class="t">Liste o que está errado</span><p>Cabeçalhos com espaço e acento · data e hora na mesma coluna · “Roubo/roubo/ROUBO/Roub.” · “Centro/centro/Ctr” · valores como <code>R$ 2000</code> e <code>1.500,00</code> · idades <code>999</code> e <code>-3</code> · linhas em branco · linha “TOTAL GERAL”.</p></li>
+        <li><span class="t">Salve como <code>.xlsx</code> chamado <code>ocorrencias_LIMPO</code></span><p>Trabalhe daqui em diante nesse arquivo. O <code>.csv</code> bruto fica intacto.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 3.2</span>
+      <h4>Padronizar texto: espaços e maiúsculas</h4>
+      <p>Crie colunas auxiliares à direita (ex.: em <code>J</code> e <code>K</code>) e depois cole os valores por cima.</p>
+      <div class="f">
+      <span class="c">' J — Bairro sem espaço extra e em Primeira Maiúscula</span><br>
+      =PRI.MAIÚSCULA(ARRUMAR(C2))<br><br>
+      <span class="c">' K — Tipo sem espaço; troca abreviação e depois padroniza a caixa</span><br>
+      =PRI.MAIÚSCULA(ARRUMAR(SUBSTITUIR(D2; <span class="s">"Roub."</span>; <span class="s">"Roubo"</span>)))</div>
+      <ol class="step">
+        <li><span class="t">Escreva a fórmula na linha 2 e dê duplo-clique na alça</span><p>Ela preenche até o fim.</p></li>
+        <li><span class="t">Confira os casos difíceis</span><p><code>ARRUMAR</code> tira <code>" Roubo "</code> → <code>"Roubo"</code>. <code>PRI.MAIÚSCULA</code> faz <code>"ROUBO"</code> → <code>"Roubo"</code>. “Ctr”, “Jd. Leblon”, “C.P.A.” não são só espaço/caixa — troque com <code>SUBSTITUIR</code> aninhado ou com Localizar e Substituir (<kbd>Ctrl</kbd>+<kbd>H</kbd>).</p></li>
+        <li><span class="t">Cole como valores</span><p>Selecione J:K → <kbd>Ctrl</kbd>+<kbd>C</kbd> → sobre as colunas originais → <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd> → <em>Valores</em>. Apague as auxiliares.</p></li>
+        <li><span class="t">Prove que funcionou</span><p><code>=CONT.SE(D:D;"Roubo")</code> antes pegava só um pedaço; depois pega todos. É a hora de mostrar isso à turma.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 3.3</span>
+      <h4>Separar “Data / Hora” e converter em Data de verdade</h4>
+      <ol class="step">
+        <li><span class="t">Selecione a coluna combinada</span><p>A coluna <em>Data / Hora da Ocorrência</em> tem <code>05/01/2026 14:32</code>.</p></li>
+        <li><span class="t"><kbd>Dados</kbd> → <kbd>Texto para Colunas</kbd></span><p>Escolha <strong>Delimitado</strong> → separador <strong>Espaço</strong> → Avançar.</p></li>
+        <li><span class="t">Defina o formato de cada coluna</span><p>Na 1ª coluna (data), marque <strong>Data: DMA</strong>. Na 2ª (hora), deixe <em>Geral</em>. Concluir.</p></li>
+        <li><span class="t">Trate as linhas fora do padrão</span><p>Onde a data veio como <code>2026-01-07</code> ou <code>06-01-2026</code>, o passo acima pode falhar. Use <code>=DATA.VALOR(...)</code> ou selecione essas células e refaça Texto para Colunas só nelas.</p></li>
+        <li><span class="t">Confirme que virou número</span><p>Data reconhecida fica <strong>alinhada à direita</strong>. Se ficou à esquerda, ainda é texto — o Power BI não calculará períodos.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 3.4</span>
+      <h4>Converter “Valor Apreendido” em número</h4>
+      <ol class="step">
+        <li><span class="t">Localizar e Substituir</span><p><kbd>Ctrl</kbd>+<kbd>H</kbd>: substitua <code>"R$ "</code> por nada, e <code>"."</code> por nada (separador de milhar). Depois <code>","</code> por <code>"."</code> se o Excel estiver em configuração internacional.</p></li>
+        <li><span class="t">Trate os “vazios” disfarçados</span><p>Células com <code>-</code> ou <code>""</code>: substitua por <code>0</code> (se “não houve apreensão”) ou deixe em branco (se “não informado”) — decida e seja consistente.</p></li>
+        <li><span class="t">Multiplique por 1</span><p>Numa auxiliar: <code>=VALOR(I2)</code> ou <code>=I2*1</code>. Cole como valores por cima.</p></li>
+      </ol>
+      <div class="callout tip"><span class="lbl">Atalho de diagnóstico</span>
+        <code>=CONT.VALORES(I:I)-CONT.NÚM(I:I)</code> conta quantas células da coluna de valor <strong>não</strong> são número. Enquanto não der praticamente zero, a coluna ainda tem texto.</div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section id="duplicatas">
+    <div class="secnum">04</div>
+    <h2>Remover duplicatas com segurança</h2>
+    <div class="callout err"><span class="lbl">Antes de tudo</span>
+      <strong>Duplique a planilha</strong> (clique direito na aba → Mover ou Copiar → Criar uma cópia). “Remover Duplicatas” apaga linhas de verdade e <strong>não</strong> dá para desfazer depois de salvar e fechar.</div>
+
+    <div class="ex">
+      <span class="tag">Exercício 4.1</span>
+      <h4>Tirar B.O. repetidos da base bruta</h4>
+      <ol class="step">
+        <li><span class="t">Transforme em Tabela</span><p>Clique em qualquer célula dos dados → <kbd>Ctrl</kbd>+<kbd>T</kbd>.</p></li>
+        <li><span class="t">Selecione os dados e abra a ferramenta</span><p><kbd>Dados</kbd> → <kbd>Remover Duplicatas</kbd>.</p></li>
+        <li><span class="t">Escolha a coluna-chave certa</span><p>Desmarque tudo e marque <strong>apenas <code>Núm. B.O.</code></strong>. Se você marcar todas as colunas, duas linhas do mesmo B.O. com uma diferença mínima (ex.: “Qtd Vítimas” 0 vs 1) <em>não</em> serão vistas como duplicadas.</p></li>
+        <li><span class="t">Confirme</span><p>O Excel informa: “5 valores duplicados encontrados e removidos; 130 valores exclusivos permanecem.” Esse número tem que bater com o esperado.</p></li>
+        <li><span class="t">Registre o que foi feito</span><p>Numa célula ou numa aba <code>log</code>: “Removidas 5 duplicatas por Núm. B.O. em 09/09/2026.” Auditoria agradece.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 4.2</span>
+      <h4>Achar duplicatas <em>antes</em> de apagar (recomendado)</h4>
+      <p>Nem toda “duplicata” deve ser removida — às vezes é um erro a investigar. Marque primeiro, decida depois.</p>
+      <div class="f">
+      <span class="c">' coluna nova — quantas vezes esse B.O. aparece</span><br>
+      =CONT.SE([Núm. B.O.]; [@[Núm. B.O.]])<br>
+      <span class="c">' &gt; 1 = investigar. Filtre por esse valor e olhe linha a linha.</span></div>
+      <ol class="step">
+        <li><span class="t">Filtre a coluna nova por “maior que 1”</span></li>
+        <li><span class="t">Compare as linhas repetidas</span><p>São idênticas? Foi falha do sistema → pode remover. Têm dados diferentes? É duplicidade de operador → decida qual registro é o correto.</p></li>
+        <li><span class="t">Só então use Remover Duplicatas</span></li>
+      </ol>
+    </div>
+
+    <div class="callout note"><span class="lbl">Por que isso é crítico na SESP</span>
+      Um B.O. de homicídio contado duas vezes infla o indicador do mês e pode disparar uma operação ou uma cobrança do comando por um número que não existe.</div>
+  </section>
+
+  <!-- 05 -->
+  <section id="grafico">
+    <div class="secnum">05</div>
+    <h2>Escolher o gráfico certo</h2>
+    <p class="lead">O gráfico não se escolhe pela aparência — escolhe-se pela <strong>pergunta</strong>. Antes de inserir qualquer gráfico, responda: “que pergunta este gráfico responde?”</p>
+
+    <div class="tbl"><table>
+      <tr><th>A pergunta é…</th><th>Gráfico</th><th>Exemplo com <span class="path">painel/</span></th></tr>
+      <tr><td><strong>Como isso evoluiu no tempo?</strong></td><td>Linha</td><td>Homicídios mês a mês nos últimos 12 meses</td></tr>
+      <tr><td><strong>Quais categorias se destacam?</strong></td><td>Barras / colunas</td><td>Ocorrências por bairro em jan/2026 (barras horizontais — nomes longos)</td></tr>
+      <tr><td><strong>Qual a proporção de cada parte no todo?</strong></td><td>Rosca (máx. 4 fatias)</td><td>Composição de tipos de crime no Centro (Furto / Roubo / Outros)</td></tr>
+      <tr><td><strong>Onde os valores se concentram?</strong></td><td>Histograma / dispersão</td><td>Distribuição do tempo de resposta; relação valor apreendido × tipo</td></tr>
+    </table></div>
+
+    <div class="ex">
+      <span class="tag">Exercício 5.1</span>
+      <h4>Três perguntas, três gráficos — a partir de <code>ocorrencias_mensais.csv</code></h4>
+      <ol class="step">
+        <li><span class="t">Prepare os dados</span><p>Abra o arquivo, <kbd>Ctrl</kbd>+<kbd>T</kbd>. Insira uma <strong>Tabela Dinâmica</strong> (<kbd>Inserir</kbd> → <kbd>Tabela Dinâmica</kbd>).</p></li>
+        <li><span class="t">Gráfico de LINHA — “como evoluiu?”</span><p>Dinâmica: <em>Ano_Mes</em> nas Linhas, <em>Ocorrencias</em> nos Valores, filtro <em>Tipo_Ocorrencia = Homicídio</em>. Insira <kbd>Gráfico de Linhas</kbd>. Adicione uma linha de meta (Seção 06).</p></li>
+        <li><span class="t">Gráfico de BARRAS — “quais bairros?”</span><p>Nova dinâmica: <em>Bairro</em> nas Linhas, <em>Ocorrencias</em> nos Valores, filtro <em>Ano_Mes = 2026-01</em>. Ordene do maior para o menor. Insira <kbd>Barras Horizontais</kbd> (nomes como “Grande Terceiro” não cabem na vertical).</p></li>
+        <li><span class="t">Gráfico de ROSCA — “qual a composição?”</span><p>Filtro <em>Bairro = Centro</em>, <em>Tipo</em> nas Linhas, <em>Ocorrencias</em> nos Valores. Se tiver mais de 4 tipos, agrupe os menores em “Outros”. Insira <kbd>Rosca</kbd> e mostre <strong>percentuais</strong> nos rótulos.</p></li>
+      </ol>
+      <details><summary>Resposta esperada (números da base)</summary>
+      <div class="body"><p>Homicídios nos últimos 6 meses: <strong>44 → 49 → 46 → 56 → 53 → 55</strong>. Em jan/2026: total <strong>1.020</strong> ocorrências, maior bairro <strong>Pedra 90 (201)</strong>, <strong>55</strong> homicídios, R$ <strong>1.071.938</strong> apreendidos.</p></div></details>
+    </div>
+
+    <div class="callout err"><span class="lbl">Nunca use rosca/pizza para…</span>
+      comparar tendências ao longo do tempo, comparar mais de 4 categorias, ou quando as fatias têm tamanhos parecidos. Nesses casos, barras sempre ganham.</div>
+  </section>
+
+  <!-- 06 -->
+  <section id="mentiras">
+    <div class="secnum">06</div>
+    <h2>Gráficos que mentem</h2>
+    <p>Alberto Cairo (<em>The Truthful Art</em>): “um gráfico mentiroso é tão perigoso quanto uma notícia falsa, especialmente na gestão pública.” Três erros derrubam a credibilidade de um relatório da SESP.</p>
+
+    <h3>Erro 1 — o eixo Y que não começa no zero</h3>
+    <figure class="chartbox">
+      <svg viewBox="0 0 640 220" role="img" aria-label="Mesma série de homicídios, com eixo cortado e com eixo no zero">
+        <!-- BAD: eixo começa em 42 -->
+        <g transform="translate(0,0)">
+          <text class="ct" x="20" y="18">Eixo cortado (começa em 42)</text>
+          <line x1="45" y1="30" x2="45" y2="170" class="chart-ink"/>
+          <line x1="45" y1="170" x2="290" y2="170" class="chart-ink"/>
+          <text class="cl" x="12" y="34">56</text><text class="cl" x="12" y="170">42</text>
+          <!-- valores 44,49,46,56,53,55 mapeados de 42..56 -> y 170..30 -->
+          <polyline fill="none" stroke="var(--vermelho)" stroke-width="2.5"
+            points="55,150 100,100 145,140 190,30 235,60 280,40"/>
+          <text class="cl" x="150" y="200">parece que dobrou</text>
+        </g>
+        <!-- GOOD: eixo no zero -->
+        <g transform="translate(340,0)">
+          <text class="ct" x="0" y="18">Eixo no zero</text>
+          <line x1="25" y1="30" x2="25" y2="170" class="chart-ink"/>
+          <line x1="25" y1="170" x2="285" y2="170" class="chart-ink"/>
+          <text class="cl" x="0" y="34">60</text><text class="cl" x="6" y="170">0</text>
+          <!-- 44..56 sobre 0..60 -> y 170..30 ; escala: 140px/60 -->
+          <polyline fill="none" stroke="var(--verde)" stroke-width="2.5"
+            points="35,67 80,55 125,63 170,40 215,47 260,42"/>
+          <text class="cl" x="70" y="200">variação real: pequena</text>
+        </g>
+      </svg>
+      <figcaption>Mesmíssimos dados (44, 49, 46, 56, 53, 55 homicídios). À esquerda, o eixo cortado transforma +25% numa “explosão”.</figcaption>
+    </figure>
+    <ol class="step">
+      <li><span class="t">No Excel</span><p>Clique no eixo vertical → <kbd>Formatar Eixo</kbd> → <em>Limites</em> → <strong>Mínimo = 0</strong>. Sempre.</p></li>
+      <li><span class="t">Exceção rara</span><p>Séries financeiras com variação minúscula podem usar eixo cortado — mas <strong>com aviso explícito no gráfico</strong>. Em segurança pública, mantenha zero.</p></li>
+    </ol>
+
+    <h3>Erro 2 — o gráfico de pizza 3D</h3>
+    <figure class="chartbox">
+      <svg viewBox="0 0 520 180" role="img" aria-label="Pizza 3D distorce o tamanho das fatias">
+        <ellipse cx="130" cy="110" rx="90" ry="42" fill="none" class="chart-grid"/>
+        <path d="M130,110 L220,110 A90,42 0 0,0 90,72 Z" fill="var(--vermelho-soft)" stroke="var(--vermelho)"/>
+        <path d="M130,110 L90,72 A90,42 0 1,0 220,110 Z" fill="var(--verde-soft)" stroke="var(--verde)"/>
+        <path d="M40,110 A90,42 0 0,0 220,110 L220,124 A90,42 0 0,1 40,124 Z" fill="var(--line)" opacity=".6"/>
+        <text class="cl" x="150" y="150">fatia da frente parece maior</text>
+        <text class="cl" x="330" y="90">2 fatias de 50%.</text>
+        <text class="cl" x="330" y="110">Em 3D, a de baixo</text>
+        <text class="cl" x="330" y="130">“engorda”. É ilusão</text>
+        <text class="cl" x="330" y="150">de óptica sistemática.</text>
+      </svg>
+      <figcaption>A perspectiva do 3D aumenta visualmente a fatia da frente. Duas fatias iguais deixam de parecer iguais.</figcaption>
+    </figure>
+    <p><strong>Regra SESP:</strong> todo gráfico em relatório ou dashboard é <strong>2D</strong>. Sem sombra, sem profundidade, sem gradiente decorativo. Prefira <strong>rosca</strong> à pizza (o furo central reduz a distorção).</p>
+
+    <h3>Erro 3 — chartjunk (Edward Tufte)</h3>
+    <div class="compare">
+      <div class="bad"><h5>✗ Poluído</h5><p>Fundo colorido, grade pesada, sombra nas barras, 8 cores diferentes, logo gigante, título que já dá o veredito (“Queda histórica!”).</p></div>
+      <div class="good"><h5>✓ Limpo</h5><p>Fundo branco, sem grade ou grade fininha, uma cor (destaque só no que importa), título que descreve o dado (“Homicídios por mês — 2025”), fonte e data visíveis.</p></div>
+    </div>
+    <p>Tufte: “cada pixel de um gráfico deve justificar sua existência comunicando dados.” Chartjunk é todo pixel que não faz isso.</p>
+
+    <div class="ficha r">
+      <h4>Caso real — Nova York, 2013</h4>
+      <p>O governo publicou um gráfico de barras <strong>3D</strong> com o eixo Y começando em <strong>85%</strong>, alegando “queda drástica” no crime. A variação real era de 90 para 85 — cinco pontos — mas parecia uma redução de quase 80%. Jornalistas perceberam o truque; o episódio virou estudo de caso de manipulação (mesmo que involuntária). <strong>Transparência visual é transparência institucional</strong> — e pode ser questionada pelo Ministério Público.</p>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section id="painel">
+    <div class="secnum">07</div>
+    <h2>Mini-painel do comandante</h2>
+    <p class="lead">Uma visão tática de <strong>1 tela</strong> que responde, em menos de 30 segundos: <strong>quanto</strong> está acontecendo, <strong>onde</strong> e <strong>para onde está indo</strong>. Base: <span class="path">painel/ocorrencias_mensais.csv</span>.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 7 · Laboratório completo</span>
+      <h4>Construir o painel do zero</h4>
+      <ol class="step">
+        <li><span class="t">Base estruturada</span><p>Abra o CSV → <kbd>Ctrl</kbd>+<kbd>T</kbd> → nomeie a tabela <code>Ocorr</code>. Confira: colunas com nome limpo, sem linha de total, sem células mescladas.</p></li>
+        <li><span class="t">Aba “Painel” e as células de KPI</span><p>Crie uma aba nova. Monte 3 cartões (uma célula grande cada):</p>
+          <div class="f">
+          <span class="c">' Total de ocorrências no último mês (2026-01)</span><br>
+          =SOMASES(Ocorr[Ocorrencias]; Ocorr[Ano_Mes]; <span class="s">"2026-01"</span>)<span class="c">   → 1.020</span><br>
+          <span class="c">' Variação % vs. mês anterior</span><br>
+          =SOMASES(Ocorr[Ocorrencias];Ocorr[Ano_Mes];<span class="s">"2026-01"</span>)
+          / SOMASES(Ocorr[Ocorrencias];Ocorr[Ano_Mes];<span class="s">"2025-12"</span>) - 1<span class="c">   → -4,3%</span><br>
+          <span class="c">' Média diária no mês</span><br>
+          =SOMASES(Ocorr[Ocorrencias];Ocorr[Ano_Mes];<span class="s">"2026-01"</span>) / 31<span class="c">   → 32,9</span></div>
+        </li>
+        <li><span class="t">Formate a variação como semáforo</span><p>Formatação Condicional na célula da variação: <span class="chip r">vermelho se &gt; 0</span> <span class="chip v">verde se ≤ 0</span> (mais crime = ruim). Mostre com seta: formato personalizado <code>▲ 0,0%;▼ 0,0%</code>.</p></li>
+        <li><span class="t">Zona “ONDE” — barras por bairro</span><p>Tabela Dinâmica: <em>Bairro</em> nas Linhas, <em>Soma de Ocorrencias</em> nos Valores, filtro <em>Ano_Mes = 2026-01</em>. Classifique decrescente. Gráfico de <strong>Barras Horizontais</strong>. Remova linhas de grade, título e legenda; deixe os rótulos de dados.</p></li>
+        <li><span class="t">Zona “PARA ONDE” — linha de tendência 6 meses</span><p>Dinâmica: <em>Ano_Mes</em> nas Linhas (últimos 6), <em>Soma de Ocorrencias</em>. Gráfico de <strong>Linha</strong>, eixo começando em 0. Adicione uma <em>linha de meta</em> horizontal (série extra com valor fixo).</p></li>
+        <li><span class="t">Segmentação (slicers)</span><p>Clique na Tabela Dinâmica → <kbd>Análise de Tabela Dinâmica</kbd> → <kbd>Inserir Segmentação de Dados</kbd> → marque <em>Ano_Mes</em> e <em>Regional</em>. Conecte as segmentações aos vários gráficos (<kbd>Conexões de Relatório</kbd>). Agora o comandante filtra tudo clicando, sem fórmula.</p></li>
+        <li><span class="t">Acabamento visual</span><p>Uma cor institucional + cinza para contexto + vermelho/verde só para alerta. No máximo <strong>3 gráficos</strong>. O KPI principal (total do mês) deve ser o maior elemento da tela.</p></li>
+        <li><span class="t">Data de atualização</span><p>Numa célula do rodapé: <code>="Atualizado em "&amp;TEXTO(HOJE();"dd/mm/aaaa")</code>. Fonte e data sempre visíveis — é o que torna o painel auditável.</p></li>
+      </ol>
+      <details><summary>Como fica a “anatomia” (4 zonas)</summary>
+      <div class="body">
+        <ul class="clean">
+          <li><strong>Zona 1 (cima-esq):</strong> número grande — total do mês + variação.</li>
+          <li><strong>Zona 2 (baixo-esq):</strong> barras por bairro — onde agir.</li>
+          <li><strong>Zona 3 (cima-dir):</strong> linha de tendência 6 meses — para onde vai.</li>
+          <li><strong>Zona 4 (baixo-dir):</strong> filtros (Ano_Mes, Regional).</li>
+        </ul>
+      </div></details>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section id="menos">
+    <div class="secnum">08</div>
+    <h2>Menos é mais</h2>
+    <div class="tbl"><table>
+      <tr><th>Princípio</th><th>Na prática</th></tr>
+      <tr><td>Um número grande e visível</td><td>O KPI principal domina o topo. O gestor lê o mais importante em menos de 3 segundos.</td></tr>
+      <tr><td>No máximo 3 gráficos por painel</td><td>Mais que isso vira relatório visual confuso. Cada gráfico responde uma pergunta diferente.</td></tr>
+      <tr><td>Cores com significado, não decoração</td><td>Vermelho = alerta · verde = meta atingida · cinza = contexto. Nunca cor “para animar”.</td></tr>
+      <tr><td>Cabe em uma tela</td><td>Se o gestor precisa rolar ou clicar muito para achar a informação, o painel foi mal projetado.</td></tr>
+    </table></div>
+    <div class="callout tip"><span class="lbl">Comparação que fecha o Módulo 4</span>
+      Um mini-painel de 1 página bem feito tem mais impacto na decisão do comando do que um relatório de 50 páginas em texto.</div>
+  </section>
+
+  <!-- 09 -->
+  <section id="excelbi">
+    <div class="secnum">09</div>
+    <h2>Excel vs. Power BI</h2>
+    <p>Não existe ferramenta “melhor” — existe a certa para o contexto. As duas se complementam: o <strong>Excel prototipa e explora</strong>; o <strong>Power BI industrializa</strong> o que foi validado.</p>
+
+    <div class="tbl"><table>
+      <tr><th>Critério</th><th>Excel</th><th>Power BI</th></tr>
+      <tr><td>Volume de dados</td><td>até ~1 milhão de linhas</td><td>dezenas de milhões</td></tr>
+      <tr><td>Atualização</td><td>manual (pelo analista)</td><td>automática, agendada</td></tr>
+      <tr><td>Colaboração</td><td>arquivo compartilhado (risco de versão)</td><td>nuvem, acesso simultâneo</td></tr>
+      <tr><td>Transparência pública</td><td>limitada (arquivo fixo)</td><td>portal web interativo (ex.: InfoCrime/SSP-SP)</td></tr>
+      <tr><td>Curva de aprendizado</td><td>baixa (já conhecido)</td><td>moderada (DAX, Power Query)</td></tr>
+      <tr><td>Melhor uso na SESP</td><td>análises pontuais e rápidas</td><td>dashboards institucionais contínuos</td></tr>
+    </table></div>
+
+    <div class="compare">
+      <div class="good"><h5>Use Excel quando…</h5>
+        <ul class="clean"><li>a análise é pontual e não se repete;</li><li>a base tem menos de 100 mil linhas;</li><li>você precisa de cálculo ad-hoc e flexível;</li><li>está prototipando uma ideia;</li><li>o resultado vai por e-mail como arquivo único.</li></ul></div>
+      <div class="good"><h5>Use Power BI quando…</h5>
+        <ul class="clean"><li>o dashboard precisa atualizar sozinho;</li><li>a base tem centenas de milhares de linhas (CIOSP);</li><li>várias pessoas acessam o mesmo painel;</li><li>o relatório é institucional e permanente;</li><li>é preciso cruzar dados de várias fontes.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section id="etl">
+    <div class="secnum">10</div>
+    <h2>ETL: Extract, Transform, Load</h2>
+    <p>Ralph Kimball, o pai do Data Warehouse, definiu o processo que <strong>todo</strong> analista executa — mesmo sem saber o nome:</p>
+    <ol class="step">
+      <li><span class="t">Extract — Extrair</span><p>Puxar o CSV bruto do sistema (CIOSP, delegacia, REDS). O dado sai sujo, com erros de codificação e formatação.</p></li>
+      <li><span class="t">Transform — Transformar</span><p>Limpar, padronizar e enriquecer: remover duplicatas, padronizar texto, extrair “Mês”, “Dia da Semana” e “Turno” da data, classificar bairros por regional.</p></li>
+      <li><span class="t">Load — Carregar</span><p>Levar os dados transformados para o modelo (Excel ou Power BI). A partir daí, gráficos e indicadores se atualizam.</p></li>
+    </ol>
+    <div class="callout note"><span class="lbl">A ideia central do Dia 3</span>
+      O trabalho manual de limpeza que você fez nas Seções 03–04 <strong>é o T do ETL</strong>. O Power Query (Seção 12) grava esse T como um passo a passo que roda de novo com um clique — todo mês, na base nova.</div>
+
+    <div class="ficha g">
+      <h4>Caso real — SSP-SP → portal InfoCrime (2018–2020)</h4>
+      <p>A Secretaria de Segurança Pública de São Paulo migrou relatórios mensais estáticos em PDF/Excel para o portal <strong>InfoCrime</strong>, em Power BI, público na internet. Cidadãos, jornalistas e pesquisadores passaram a filtrar por bairro, ano e tipo de crime <strong>em tempo real</strong>, sem pedir documento. Resultado: menos pedidos via Lei de Acesso à Informação e mais credibilidade pública dos dados.</p>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section id="preetl">
+    <div class="secnum">11</div>
+    <h2>Pré-ETL: preparar a base para exportação</h2>
+    <p>Sistemas legados da SESP exportam CSVs com os mesmos problemas sempre. Corrigi-los no Excel <strong>antes</strong> de levar ao Power BI evita ~90% dos erros de importação.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 11.1</span>
+      <h4>Salvar em UTF-8 — o passo que resolve os acentos</h4>
+      <ol class="step">
+        <li><span class="t">Abra o BRUTO e confirme o sintoma</span><p>“Cuiabá” aparece como “CuiabÃ¡”, “Óbito” como “Ã“bito”. O arquivo está em ANSI/Windows-1252.</p></li>
+        <li><span class="t">Arquivo → Salvar Como</span><p>Escolha o local e, no campo <em>Tipo</em>, selecione <strong>“CSV UTF-8 (delimitado por vírgulas) (*.csv)”</strong>.</p></li>
+        <li><span class="t">Salvar e confirmar</span><p>Se o Excel perguntar sobre manter o formato, confirme.</p></li>
+        <li><span class="t">Teste</span><p>Abra o novo arquivo no Bloco de Notas. Os acentos devem estar corretos. Só então importe no Power BI.</p></li>
+      </ol>
+      <div class="callout err"><span class="lbl">Por que isso não é opcional</span>
+        Com codificação errada: filtros não batem (“Coxipó” ≠ “CoxipÃ³”), agrupamentos falham e o relatório mostra nomes de bairro ilegíveis. UTF-8 deve ser padrão <strong>obrigatório</strong> em todo setor da SESP que exporta dados.</div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Exercício 11.2</span>
+      <h4>Cabeçalho limpo e tipagem</h4>
+      <ol class="step">
+        <li><span class="t">Apague a linha-título e a linha em branco do topo</span><p>A primeira linha do arquivo tem que ser o cabeçalho de verdade.</p></li>
+        <li><span class="t">Renomeie as colunas</span><p><code>"Núm. B.O."</code> → <code>Num_BO</code> · <code>"Data / Hora da Ocorrência"</code> → <code>DataHora</code> · <code>"Valor Apreendido (R$)"</code> → <code>Valor_Apreendido</code>. Sem espaços, sem acentos, sem pontuação.</p></li>
+        <li><span class="t">Confirme os tipos</span><p>Datas alinhadas à direita (não texto). Números sem “R$”. O Power BI não calcula período a partir de texto.</p></li>
+        <li><span class="t">Delete o lixo do rodapé</span><p>A linha <code>"TOTAL GERAL"</code> e qualquer linha em branco. Elas quebram a importação e são recontadas como se fossem ocorrências.</p></li>
+      </ol>
+    </div>
+
+    <div class="ficha">
+      <h4>Checklist do “Pré-ETL” — vira POP do setor</h4>
+      <div class="grid2" style="display:grid;gap:1rem;grid-template-columns:1fr">
+        <div>
+          <p class="lbl">Antes de exportar</p>
+          <ul class="clean">
+            <li>Codificação = CSV UTF-8</li>
+            <li>1ª linha = cabeçalhos, não dados</li>
+            <li>Sem células mescladas</li>
+            <li>Datas em DD/MM/AAAA ou AAAA-MM-DD</li>
+            <li>Sem linha de total automático</li>
+            <li>Sem linhas em branco no fim</li>
+            <li>Colunas sem espaço/acento no nome</li>
+          </ul>
+        </div>
+        <div>
+          <p class="lbl">Depois de importar no Power BI</p>
+          <ul class="clean">
+            <li>Datas reconhecidas como tipo “Data”</li>
+            <li>Números reconhecidos como “Número”</li>
+            <li>Total de linhas confere com o esperado</li>
+            <li>Acentos exibidos corretamente</li>
+            <li>Nenhuma coluna dividida errada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section id="pq">
+    <div class="secnum">12</div>
+    <h2>Power Query passo a passo</h2>
+    <p class="lead">O Power Query é o motor de ETL embutido no Excel (<kbd>Dados</kbd> → <kbd>Obter Dados</kbd>) e no Power BI. Ele <strong>grava cada passo</strong> da limpeza — e repete tudo num clique quando a base do mês seguinte chega no mesmo formato.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 12 · Limpar o BRUTO no Power Query</span>
+      <h4>Da bagunça à tabela pronta, com passos reproduzíveis</h4>
+      <ol class="step">
+        <li><span class="t">Conectar</span><p><kbd>Dados</kbd> → <kbd>Obter Dados</kbd> → <kbd>De Texto/CSV</kbd> → selecione o BRUTO. Na prévia, ajuste a <strong>Origem do Arquivo</strong> para <em>1252: Europa Ocidental (Windows)</em> se os acentos estiverem quebrados. Clique em <strong>Transformar Dados</strong> (não “Carregar”).</p></li>
+        <li><span class="t">Remover as linhas de lixo do topo</span><p><kbd>Página Inicial</kbd> → <kbd>Remover Linhas</kbd> → <kbd>Remover Linhas Superiores</kbd> → <strong>2</strong> (título + branco).</p></li>
+        <li><span class="t">Promover cabeçalhos</span><p><kbd>Transformar</kbd> → <kbd>Usar Primeira Linha como Cabeçalhos</kbd>.</p></li>
+        <li><span class="t">Renomear colunas</span><p>Duplo-clique em cada cabeçalho: <code>Num_BO</code>, <code>DataHora</code>, <code>Bairro</code>, <code>Tipo</code>, <code>Qtd_Vitimas</code>, <code>Idade_Vitima</code>, <code>Valor_Apreendido</code>.</p></li>
+        <li><span class="t">Dividir “DataHora” em Data e Hora</span><p>Selecione a coluna → <kbd>Transformar</kbd> → <kbd>Dividir Coluna</kbd> → <kbd>Por Delimitador</kbd> → <em>Espaço</em> → <em>na ocorrência mais à esquerda</em>. Renomeie as duas colunas resultantes.</p></li>
+        <li><span class="t">Padronizar o texto</span><p>Coluna <code>Tipo</code> → <kbd>Transformar</kbd> → <kbd>Formatar</kbd> → <kbd>Capitalizar Cada Palavra</kbd> e <kbd>Aparar</kbd> (Trim). Para “Roub.” → “Roubo”: <kbd>Substituir Valores</kbd>. Repita em <code>Bairro</code>.</p></li>
+        <li><span class="t">Substituir valores nulos / inválidos</span><p><code>Valor_Apreendido</code>: <kbd>Substituir Valores</kbd> <code>null</code> → <code>0</code> e <code>"-"</code> → <code>0</code>. <code>Idade_Vitima</code>: substitua <code>999</code>, <code>0</code>, <code>-3</code> por <code>null</code> (ver código M abaixo).</p></li>
+        <li><span class="t">Definir os tipos</span><p>Clique no ícone de tipo à esquerda de cada cabeçalho: <code>Data</code> = Data · <code>Hora</code> = Hora · <code>Valor_Apreendido</code>, <code>Qtd_Vitimas</code>, <code>Idade_Vitima</code> = Número Inteiro.</p></li>
+        <li><span class="t">Remover duplicatas e linhas vazias</span><p>Selecione <code>Num_BO</code> → <kbd>Remover Linhas</kbd> → <kbd>Remover Duplicatas</kbd>. Depois <kbd>Remover Linhas</kbd> → <kbd>Remover Linhas em Branco</kbd>. Filtre <code>Tipo</code> ≠ <code>"Total Geral"</code> para tirar o rodapé.</p></li>
+        <li><span class="t">Enriquecer: Mês, Dia da Semana, Turno</span><p>Coluna <code>Data</code> selecionada → <kbd>Adicionar Coluna</kbd> → <kbd>Data</kbd> → <kbd>Mês</kbd> → <kbd>Nome do Mês</kbd>; de novo para <kbd>Dia</kbd> → <kbd>Nome do Dia</kbd>. Para o Turno, <kbd>Adicionar Coluna</kbd> → <kbd>Coluna Personalizada</kbd> (código M abaixo).</p></li>
+        <li><span class="t">Renomear os passos</span><p>No painel <em>Etapas Aplicadas</em> (direita), duplo-clique em cada passo e dê um nome claro: <code>Remove_Titulo</code>, <code>Padroniza_Tipo</code>, <code>Remove_Duplicatas_BO</code>. “Etapa1” não diz nada numa auditoria.</p></li>
+        <li><span class="t">Fechar e Carregar</span><p><kbd>Página Inicial</kbd> → <kbd>Fechar e Carregar</kbd>. Escolha <em>Somente Conexão</em> ou carregue numa planilha. No mês que vem: troque o arquivo de origem e clique em <kbd>Atualizar Tudo</kbd> — todos os 12 passos rodam sozinhos.</p></li>
+      </ol>
+
+      <p class="lbl" style="margin-top:1.2rem">Trechos de código M (aba <kbd>Exibição</kbd> → <kbd>Editor Avançado</kbd>)</p>
+      <div class="f m">
+      <span class="c">// Turno a partir da hora</span><br>
+      = Table.AddColumn(Etapa, <span class="s">"Turno"</span>, each<br>
+      &nbsp;&nbsp;<b>let</b> h = Time.Hour([Hora]) <b>in</b><br>
+      &nbsp;&nbsp;<b>if</b> h &lt; 6 <b>then</b> <span class="s">"Madrugada"</span><br>
+      &nbsp;&nbsp;<b>else if</b> h &lt; 12 <b>then</b> <span class="s">"Manhã"</span><br>
+      &nbsp;&nbsp;<b>else if</b> h &lt; 18 <b>then</b> <span class="s">"Tarde"</span><br>
+      &nbsp;&nbsp;<b>else</b> <span class="s">"Noite"</span>, type text)</div>
+      <div class="f m">
+      <span class="c">// Idade inválida vira null (limpa 0, negativos e &gt; 120)</span><br>
+      = Table.TransformColumns(Etapa, {{<span class="s">"Idade_Vitima"</span>,<br>
+      &nbsp;&nbsp;each <b>if</b> _ = <b>null</b> <b>then</b> <b>null</b><br>
+      &nbsp;&nbsp;<b>else if</b> _ &gt; 0 <b>and</b> _ &lt; 120 <b>then</b> _<br>
+      &nbsp;&nbsp;<b>else</b> <b>null</b>, type nullable Int64.Type}})</div>
+
+      <details><summary>Por que o Power Query “é uma revolução” para a SESP</summary>
+      <div class="body"><ul class="clean">
+        <li><strong>Gravação automática de passos:</strong> a limpeza vira um algoritmo reproduzível.</li>
+        <li><strong>Atualização com um clique:</strong> base nova, mesmo formato → <kbd>Atualizar</kbd> e pronto.</li>
+        <li><strong>Auditoria transparente:</strong> qualquer pessoa abre o Power Query e vê exatamente quais transformações foram aplicadas e em que ordem.</li>
+      </ul></div></details>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section id="pasta">
+    <div class="secnum">13</div>
+    <h2>Consolidar uma pasta inteira</h2>
+    <p>Cada batalhão manda sua planilha mensal separada. Em vez de copiar e colar 12 arquivos, o Power Query lê a <strong>pasta toda</strong> e aplica a mesma limpeza a todos.</p>
+
+    <div class="ex">
+      <span class="tag">Exercício 13 · “De uma Pasta”</span>
+      <h4>Juntar os 12 arquivos de <span class="path">consolidacao_pasta/</span></h4>
+      <ol class="step">
+        <li><span class="t">Conectar à pasta</span><p><kbd>Dados</kbd> → <kbd>Obter Dados</kbd> → <kbd>De um Arquivo</kbd> → <kbd>De uma Pasta</kbd> → aponte para <code>consolidacao_pasta/</code>.</p></li>
+        <li><span class="t">Combinar</span><p>Na janela de prévia, clique em <strong>Combinar e Transformar Dados</strong>. O Power Query mostra um arquivo-exemplo e pergunta como interpretá-lo (delimitador, codificação).</p></li>
+        <li><span class="t">Confirme o arquivo-exemplo</span><p>Ele cria uma <em>função</em> que será aplicada a cada arquivo da pasta. Uma coluna <code>Source.Name</code> guarda o nome do arquivo de origem — útil para rastrear.</p></li>
+        <li><span class="t">Trate a diferença de schema</span><p><code>efetivo_rotam_2026-02.csv</code> tem uma coluna a mais (<code>Obs</code>). Depois de combinar, selecione <strong>explicitamente</strong> as 7 colunas que interessam (<kbd>Escolher Colunas</kbd>) — assim colunas extras futuras não quebram o painel.</p></li>
+        <li><span class="t">Limpar e tipar</span><p><code>Dias_Afastado</code> = Número Inteiro. <code>Situacao</code> = padronizar caixa. Filtrar linhas de cabeçalho repetido, se houver.</p></li>
+        <li><span class="t">Fechar e Carregar</span><p>Resultado: uma tabela única com o efetivo das 6 unidades × 2 meses. Mês que vem, jogue os novos arquivos na pasta e clique em <kbd>Atualizar</kbd> — eles entram sozinhos.</p></li>
+      </ol>
+      <div class="callout tip"><span class="lbl">O caso real</span>
+        Um setor de RH gastava <strong>4 horas toda sexta</strong> copiando 5 planilhas para montar o relatório de efetivo. Com “De uma Pasta” + <kbd>Atualizar</kbd>: <strong>30 segundos</strong>. A automação não fica mais cara quando o volume cresce — 5 arquivos ou 50, é o mesmo clique.</div>
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section id="conduta">
+    <div class="secnum">14</div>
+    <h2>Código de conduta do analista</h2>
+    <ol class="step">
+      <li><span class="t">Nunca altere a base original</span><p>Sempre trabalhe em cópia. A base bruta exportada do sistema é preservada como evidência e referência de auditoria.</p></li>
+      <li><span class="t">Documente cada transformação</span><p>No Power Query, nomeie cada passo com clareza. “Passo 1” não diz nada; <code>Remover_Linhas_Vazias_Rodape</code> é autoexplicativo.</p></li>
+      <li><span class="t">Valide o resultado contra a fonte</span><p>Depois do ETL, compare o total de registros e a soma de valores-chave com o relatório original do sistema. Se os números não batem, algo deu errado — pare e investigue.</p></li>
+    </ol>
+    <div class="callout note"><span class="lbl">Os três erros mais caros</span>
+      Analisar sem limpar · escolher o gráfico pelo visual · não automatizar o que se repete. O tempo economizado com automação deve ser reinvestido em <strong>análise estratégica</strong> — achar padrões, causas e soluções.</div>
+  </section>
+
+  <!-- 15 -->
+  <section id="quiz">
+    <div class="secnum">15</div>
+    <h2>Armadilhas + Quiz</h2>
+
+    <div class="tbl"><table>
+      <tr><th>Armadilha</th><th>Consequência</th><th>Prevenção</th></tr>
+      <tr><td>Gráfico 3D em relatório oficial</td><td>distorce proporção; questionável pelo MP</td><td>sempre 2D</td></tr>
+      <tr><td>Eixo Y não começa em zero</td><td>exagera variação insignificante</td><td>Formatar Eixo → Mínimo 0</td></tr>
+      <tr><td>Pizza com mais de 4 fatias</td><td>impossível de comparar</td><td>barras horizontais</td></tr>
+      <tr><td>CSV sem UTF-8 no Power BI</td><td>acentos viram símbolos; filtros falham</td><td>Salvar como CSV UTF-8</td></tr>
+      <tr><td>Analisar sem validar/limpar</td><td>duplicata infla indicador; diagnóstico errado</td><td>Pré-ETL antes de tudo</td></tr>
+      <tr><td>Remover Duplicatas sem cópia</td><td>perda irreversível de registros</td><td>duplicar a aba antes</td></tr>
+    </table></div>
+
+    <div class="q"><p class="stem">1. “Garbage In, Garbage Out” significa que:</p>
+      <ol type="a"><li>o Excel tem lixo acumulado</li><li>dado ruim na entrada torna toda análise não confiável</li><li>é preciso esvaziar a lixeira antes de analisar</li><li>gráficos devem ser simples</li></ol></div>
+
+    <div class="q"><p class="stem">2. Para impedir que digitem “roubo”, “Roub.” e “ROUBO” na mesma coluna, use:</p>
+      <ol type="a"><li>Formatação Condicional</li><li>Validação de Dados → Lista</li><li>PROCV</li><li>Congelar Painéis</li></ol></div>
+
+    <div class="q"><p class="stem">3. Antes de usar “Remover Duplicatas”, você deve:</p>
+      <ol type="a"><li>salvar e fechar o arquivo</li><li>fazer uma cópia da base/aba</li><li>ordenar alfabeticamente</li><li>converter em PDF</li></ol></div>
+
+    <div class="q"><p class="stem">4. O gráfico certo para “como os homicídios evoluíram nos últimos 12 meses” é:</p>
+      <ol type="a"><li>pizza</li><li>linha</li><li>rosca</li><li>dispersão</li></ol></div>
+
+    <div class="q"><p class="stem">5. Um eixo Y que começa em 85 em vez de 0:</p>
+      <ol type="a"><li>economiza espaço, é recomendado</li><li>exagera visualmente pequenas variações</li><li>só funciona em 3D</li><li>é obrigatório em séries temporais</li></ol></div>
+
+    <div class="q"><p class="stem">6. “Cuiabá” aparecendo como “CuiabÃ¡” no Power BI indica:</p>
+      <ol type="a"><li>erro de fórmula</li><li>codificação do CSV não é UTF-8</li><li>falta de licença</li><li>a fonte do relatório está errada</li></ol></div>
+
+    <div class="q"><p class="stem">7. A grande vantagem do Power Query sobre a limpeza manual é:</p>
+      <ol type="a"><li>é mais bonito</li><li>grava os passos e repete tudo num clique quando a base nova chega</li><li>não precisa de Excel</li><li>remove a necessidade de validar dados</li></ol></div>
+
+    <div class="q"><p class="stem">8. No processo ETL, o “T” (Transform) corresponde a:</p>
+      <ol type="a"><li>extrair o CSV do sistema</li><li>limpar, padronizar e enriquecer os dados</li><li>publicar o dashboard</li><li>enviar o relatório por e-mail</li></ol></div>
+
+    <div class="q"><p class="stem">9. Para o comandante, o dashboard ideal tem:</p>
+      <ol type="a"><li>o máximo de gráficos possível</li><li>um número grande, no máximo 3 gráficos e cores com significado</li><li>tabelas detalhadas em todas as células</li><li>gráficos 3D coloridos</li></ol></div>
+
+    <div class="q"><p class="stem">10. Você deve usar o Power BI (e não o Excel) quando:</p>
+      <ol type="a"><li>a análise é pontual e não se repete</li><li>o dashboard é institucional, atualiza sozinho e várias pessoas acessam</li><li>a base tem 200 linhas</li><li>o resultado vai por e-mail como arquivo</li></ol></div>
+
+    <details><summary>Gabarito comentado</summary>
+    <div class="body">
+      <div class="tbl"><table>
+        <tr><th>#</th><th>Resp.</th><th>Por quê</th></tr>
+        <tr><td>1</td><td>b</td><td>Nenhuma ferramenta corrige uma base fundamentalmente incorreta.</td></tr>
+        <tr><td>2</td><td>b</td><td>Lista fechada bloqueia a digitação livre na fonte.</td></tr>
+        <tr><td>3</td><td>b</td><td>A remoção não se desfaz depois de salvar/fechar.</td></tr>
+        <tr><td>4</td><td>b</td><td>Tempo no eixo ⇒ linha.</td></tr>
+        <tr><td>5</td><td>b</td><td>Eixo cortado transforma variação pequena em “crise/conquista”.</td></tr>
+        <tr><td>6</td><td>b</td><td>Mojibake clássico de ANSI lido como UTF-8 (ou vice-versa).</td></tr>
+        <tr><td>7</td><td>b</td><td>Passos gravados = pipeline reproduzível e auditável.</td></tr>
+        <tr><td>8</td><td>b</td><td>Transform = limpeza + padronização + enriquecimento.</td></tr>
+        <tr><td>9</td><td>b</td><td>“Menos é mais”: 1 número grande, ≤ 3 gráficos, cor com função.</td></tr>
+        <tr><td>10</td><td>b</td><td>Institucional, contínuo, colaborativo e de grande volume ⇒ Power BI.</td></tr>
+      </table></div>
+    </div>
+    </details>
+  </section>
+
+  <!-- 16 -->
+  <section id="prof">
+    <div class="secnum">16</div>
+    <h2>Folha de cola e notas do professor</h2>
+
+    <h3>Funções de limpeza — sintaxe rápida</h3>
+    <div class="tbl"><table>
+      <tr><th>Função</th><th>Faz</th><th>Exemplo</th></tr>
+      <tr><td><code>ARRUMAR(txt)</code></td><td>tira espaços extras das pontas e duplos do meio</td><td><code>=ARRUMAR(" Roubo ")</code> → "Roubo"</td></tr>
+      <tr><td><code>PRI.MAIÚSCULA(txt)</code></td><td>Primeira Letra De Cada Palavra Maiúscula</td><td><code>=PRI.MAIÚSCULA("ROUBO")</code> → "Roubo"</td></tr>
+      <tr><td><code>MAIÚSCULA / MINÚSCULA</code></td><td>tudo em caixa alta / baixa</td><td><code>=MAIÚSCULA("cpa")</code> → "CPA"</td></tr>
+      <tr><td><code>SUBSTITUIR(txt;de;para)</code></td><td>troca um trecho por outro</td><td><code>=SUBSTITUIR(D2;"Roub.";"Roubo")</code></td></tr>
+      <tr><td><code>VALOR(txt)</code></td><td>texto numérico → número</td><td><code>=VALOR("1500")</code> → 1500</td></tr>
+      <tr><td><code>DATA.VALOR(txt)</code></td><td>texto de data → data real</td><td><code>=DATA.VALOR("2026-01-07")</code></td></tr>
+      <tr><td><code>TEXTO(valor;formato)</code></td><td>número/data → texto formatado (exportação)</td><td><code>=TEXTO(B2;"aaaa-mm")</code></td></tr>
+    </table></div>
+
+    <h3>Caminhos no Excel / Power Query</h3>
+    <div class="tbl"><table>
+      <tr><th>Para…</th><th>Vá em</th></tr>
+      <tr><td>Validar coluna na entrada</td><td>Dados → Validação de Dados</td></tr>
+      <tr><td>Separar coluna combinada</td><td>Dados → Texto para Colunas</td></tr>
+      <tr><td>Remover duplicatas</td><td>Dados → Remover Duplicatas (marque só a chave)</td></tr>
+      <tr><td>Salvar em UTF-8</td><td>Arquivo → Salvar Como → “CSV UTF-8 (delimitado por vírgulas)”</td></tr>
+      <tr><td>Abrir o Power Query</td><td>Dados → Obter Dados → De Texto/CSV → Transformar Dados</td></tr>
+      <tr><td>Consolidar vários arquivos</td><td>Obter Dados → De um Arquivo → De uma Pasta</td></tr>
+      <tr><td>Rodar o pipeline de novo</td><td>Dados → Atualizar Tudo</td></tr>
+      <tr><td>Eixo do gráfico começar em zero</td><td>clique no eixo → Formatar Eixo → Limites → Mínimo 0</td></tr>
+    </table></div>
+
+    <h3>Tempo sugerido</h3>
+    <div class="tbl"><table>
+      <tr><th>Bloco</th><th>Min</th><th>Seções</th></tr>
+      <tr><td>Manhã · GIGO + Validação</td><td>0–45</td><td>01–02</td></tr>
+      <tr><td>Manhã · Limpeza + Duplicatas (com o BRUTO)</td><td>45–120</td><td>03–04</td></tr>
+      <tr><td>Manhã · Gráficos + mentiras visuais</td><td>120–170</td><td>05–06</td></tr>
+      <tr><td>Manhã · Mini-painel (hands-on)</td><td>170–240</td><td>07–08</td></tr>
+      <tr><td>Tarde · Excel vs BI + ETL</td><td>0–45</td><td>09–10</td></tr>
+      <tr><td>Tarde · Pré-ETL + Power Query (hands-on)</td><td>45–150</td><td>11–12</td></tr>
+      <tr><td>Tarde · Consolidar pasta + conduta</td><td>150–210</td><td>13–14</td></tr>
+      <tr><td>Tarde · Armadilhas + Quiz + fecho</td><td>210–240</td><td>15</td></tr>
+    </table></div>
+
+    <h3>Momentos “efeito uau”</h3>
+    <ul class="clean">
+      <li><strong>CONT.SE antes e depois</strong> de padronizar “Roubo”: o número pula de um pedaço para o total real. Mostra que dado sujo mente.</li>
+      <li><strong>Eixo zero ao vivo</strong>: pegue a série de homicídios, faça o gráfico com eixo em 42, depois arraste o mínimo para 0. A “crise” some.</li>
+      <li><strong>Power Query + Atualizar</strong>: limpe o BRUTO de janeiro, salve. Abra um “fevereiro” com o mesmo formato sujo, troque a origem, <kbd>Atualizar</kbd> — 12 passos rodam sozinhos.</li>
+      <li><strong>De uma Pasta</strong>: jogue um 13º arquivo na pasta durante a aula e clique em Atualizar. Ele entra na base sem ninguém tocar em fórmula.</li>
+    </ul>
+
+    <h3>Armadilhas que sempre aparecem na turma</h3>
+    <ul class="clean">
+      <li>Aluno salva como “CSV (separado por vírgulas)” comum, não o “CSV UTF-8”. Os acentos continuam quebrados.</li>
+      <li>Texto para Colunas aplicado na coluna inteira quebra as linhas que estavam em outro formato de data — trate-as à parte.</li>
+      <li>Remover Duplicatas com <em>todas</em> as colunas marcadas não pega o B.O. repetido com uma diferença mínima.</li>
+      <li>No Power Query, esquecer de renomear os passos — a auditoria fica ilegível.</li>
+      <li>Gráfico de rosca com 6 fatias “porque ficou colorido”.</li>
+    </ul>
+
+    <h3>Arquivos do kit</h3>
+    <div class="f"><span class="c">Aula 3/</span><br>
+    ├─ caderno-dia3.html <span class="c">← este material</span><br>
+    ├─ Dia-3-Sesp.pdf <span class="c">← deck da aula</span><br>
+    └─ datasets/<br>
+    &nbsp;&nbsp;&nbsp;├─ README.md <span class="c">← descreve tudo + os problemas plantados</span><br>
+    &nbsp;&nbsp;&nbsp;├─ bruto/ocorrencias_CIOSP_jan2026_BRUTO.csv <span class="c">(ANSI, de propósito)</span><br>
+    &nbsp;&nbsp;&nbsp;├─ limpo/ocorrencias_jan2026_LIMPO.csv <span class="c">(a meta)</span><br>
+    &nbsp;&nbsp;&nbsp;├─ consolidacao_pasta/ <span class="c">12 arquivos de efetivo</span><br>
+    &nbsp;&nbsp;&nbsp;└─ painel/ocorrencias_mensais.csv <span class="c">576 linhas, 12 meses</span></div>
+  </section>
+
+  <div class="foot">
+    Caderno do Dia 3 · Curso de Capacitação SESP/MT · Prof. Renato Rosa · complemento do deck “Da Planilha Caótica ao Painel de Inteligência Profissional”. Próximo: Dia 4 — Power BI na prática.
+  </div>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('tt'),r=document.documentElement;
+  function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+  try{var s=localStorage.getItem('sesp-theme-d3');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var n=cur()==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    try{localStorage.setItem('sesp-theme-d3',n);}catch(e){}
+  });
+  var p=document.getElementById('pp');
+  if(p) p.addEventListener('click',function(){window.print();});
+  var saved=[];
+  window.addEventListener('beforeprint',function(){
+    saved=[];
+    document.querySelectorAll('details').forEach(function(d){saved.push([d,d.open]);d.open=true;});
+  });
+  window.addEventListener('afterprint',function(){saved.forEach(function(x){x[0].open=x[1];});});
+})();
+</script>

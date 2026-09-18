@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIOSP - Dashboard Ocorrências</title>
+    
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="Dashboard interativo para análise de ocorrências do CIOSP, Janeiro de 2026.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar / Filtros -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <h2>CIOSP <span>Mato Grosso</span></h2>
+            </div>
+            
+            <div class="filters-container">
+                <h3><i class="fa-solid fa-filter"></i> Filtros</h3>
+                
+                <div class="filter-group">
+                    <label for="filter-bairro">Bairro / Região</label>
+                    <select id="filter-bairro" class="custom-select">
+                        <option value="todos">Todos os Bairros</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-tipo">Tipo de Ocorrência</label>
+                    <select id="filter-tipo" class="custom-select">
+                        <option value="todos">Todas as Ocorrências</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button id="btn-reset" class="btn-secondary">
+                        <i class="fa-solid fa-rotate-right"></i> Limpar Filtros
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1 class="page-title">Relatório de Ocorrências</h1>
+                    <p class="page-subtitle">Janeiro de 2026 - Visão Geral</p>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                    <span class="user-name">Administrador</span>
+                </div>
+            </header>
+
+            <!-- KPIs -->
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon blue"><i class="fa-solid fa-file-lines"></i></div>
+                    <div class="kpi-details">
+                        <h4>Total BOs</h4>
+                        <h2 id="kpi-total-bos">0</h2>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon red"><i class="fa-solid fa-users-slash"></i></div>
+                    <div class="kpi-details">
+                        <h4>Total de Vítimas</h4>
+                        <h2 id="kpi-total-vitimas">0</h2>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <div class="kpi-details">
+                        <h4>Valor Apreendido</h4>
+                        <h2 id="kpi-valor">R$ 0,00</h2>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon purple"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="kpi-details">
+                        <h4>Bairro Principal</h4>
+                        <h2 id="kpi-bairro-principal">-</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gráficos -->
+            <section class="charts-grid">
+                <div class="chart-card wide">
+                    <div class="chart-header">
+                        <h3><i class="fa-solid fa-chart-line"></i> Evolução das Ocorrências no Tempo</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fa-solid fa-chart-pie"></i> Tipos de Ocorrência</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="tipoChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fa-solid fa-chart-bar"></i> Top 5 Bairros</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="bairroChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Data Array injection -->
+    <script src="data.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

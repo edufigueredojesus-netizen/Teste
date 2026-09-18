@@ -1,0 +1,131 @@
+﻿ID_BO,Data,Hora,Bairro,Regional,Tipo_Ocorrencia,Qtd_Vitimas,Idade_Vitima,Valor_Apreendido_RS
+BO-2026-00001,04/01/2026,11:00,Coxipó,Regional Leste,Lesão Corporal,1,52,0
+BO-2026-00002,01/01/2026,18:00,Coxipó,Regional Leste,Roubo,0,,0
+BO-2026-00003,12/01/2026,23:00,Porto,Regional Metropolitana,Lesão Corporal,3,46,0
+BO-2026-00004,05/01/2026,21:00,Tijucal,Regional Sul,Furto,0,,1921
+BO-2026-00005,28/01/2026,03:00,Grande Terceiro,Regional Leste,Furto,0,,26393
+BO-2026-00006,19/01/2026,08:00,Centro,Regional Metropolitana,Roubo,0,,34589
+BO-2026-00007,21/01/2026,19:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00008,26/01/2026,21:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00009,30/01/2026,07:00,Grande Terceiro,Regional Leste,Furto,0,,0
+BO-2026-00010,30/01/2026,20:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00011,04/01/2026,07:00,CPA,Regional Norte,Lesão Corporal,1,14,0
+BO-2026-00012,04/01/2026,18:00,Tijucal,Regional Sul,Tráfico de Drogas,0,,44109
+BO-2026-00013,18/01/2026,08:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00014,13/01/2026,20:00,Pedra 90,Regional Sul,Furto,0,,0
+BO-2026-00015,30/01/2026,20:00,Grande Terceiro,Regional Leste,Homicídio,1,57,0
+BO-2026-00016,05/01/2026,17:00,Jardim Leblon,Regional Norte,Roubo,0,,30369
+BO-2026-00017,02/01/2026,18:00,Centro,Regional Metropolitana,Lesão Corporal,1,62,0
+BO-2026-00018,26/01/2026,21:00,CPA,Regional Norte,Lesão Corporal,1,56,0
+BO-2026-00019,10/01/2026,07:00,Grande Terceiro,Regional Leste,Roubo,0,,0
+BO-2026-00020,27/01/2026,02:00,Centro,Regional Metropolitana,Roubo,0,,0
+BO-2026-00021,28/01/2026,05:00,Pedra 90,Regional Sul,Furto,0,,7488
+BO-2026-00022,09/01/2026,18:00,Tijucal,Regional Sul,Roubo,0,,0
+BO-2026-00023,17/01/2026,11:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00024,02/01/2026,02:00,Coxipó,Regional Leste,Homicídio,0,,0
+BO-2026-00025,30/01/2026,13:00,Grande Terceiro,Regional Leste,Furto,0,,28226
+BO-2026-00026,02/01/2026,19:00,Centro,Regional Metropolitana,Furto,0,,18743
+BO-2026-00027,19/01/2026,21:00,Jardim Leblon,Regional Norte,Furto,0,,13239
+BO-2026-00028,17/01/2026,12:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00029,25/01/2026,04:00,Porto,Regional Metropolitana,Furto,0,,0
+BO-2026-00030,05/01/2026,22:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00031,02/01/2026,18:00,Pedra 90,Regional Sul,Homicídio,1,17,0
+BO-2026-00032,31/01/2026,20:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00033,07/01/2026,06:00,Grande Terceiro,Regional Leste,Furto,0,,0
+BO-2026-00034,03/01/2026,10:00,Tijucal,Regional Sul,Furto,0,,9341
+BO-2026-00035,10/01/2026,17:00,Porto,Regional Metropolitana,Lesão Corporal,2,47,0
+BO-2026-00036,24/01/2026,13:00,Tijucal,Regional Sul,Furto,0,,3025
+BO-2026-00037,12/01/2026,04:00,Centro,Regional Metropolitana,Furto,0,,40011
+BO-2026-00038,01/01/2026,07:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00039,10/01/2026,08:00,Pedra 90,Regional Sul,Roubo,0,,0
+BO-2026-00040,21/01/2026,03:00,Grande Terceiro,Regional Leste,Furto,0,,8225
+BO-2026-00041,03/01/2026,20:00,Grande Terceiro,Regional Leste,Latrocínio,1,30,0
+BO-2026-00042,13/01/2026,11:00,Grande Terceiro,Regional Leste,Roubo,0,,14729
+BO-2026-00043,05/01/2026,14:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00044,08/01/2026,11:00,Coxipó,Regional Leste,Roubo,0,,0
+BO-2026-00045,22/01/2026,13:00,Grande Terceiro,Regional Leste,Roubo,0,,44746
+BO-2026-00046,02/01/2026,22:00,Centro,Regional Metropolitana,Tráfico de Drogas,0,,17801
+BO-2026-00047,11/01/2026,00:00,Coxipó,Regional Leste,Tráfico de Drogas,0,,0
+BO-2026-00048,03/01/2026,17:00,Centro,Regional Metropolitana,Roubo,0,,0
+BO-2026-00049,23/01/2026,11:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00050,11/01/2026,12:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00051,09/01/2026,21:00,Jardim Leblon,Regional Norte,Furto,0,,18232
+BO-2026-00052,22/01/2026,16:00,Grande Terceiro,Regional Leste,Lesão Corporal,2,19,0
+BO-2026-00053,22/01/2026,11:00,CPA,Regional Norte,Roubo,0,,17174
+BO-2026-00054,07/01/2026,14:00,CPA,Regional Norte,Lesão Corporal,2,27,0
+BO-2026-00055,12/01/2026,23:00,Pedra 90,Regional Sul,Furto,0,,10260
+BO-2026-00056,02/01/2026,20:00,Tijucal,Regional Sul,Lesão Corporal,1,66,0
+BO-2026-00057,15/01/2026,06:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00058,29/01/2026,16:00,Porto,Regional Metropolitana,Furto,0,,0
+BO-2026-00059,19/01/2026,21:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00060,07/01/2026,20:00,Pedra 90,Regional Sul,Roubo,0,,0
+BO-2026-00061,28/01/2026,12:00,Tijucal,Regional Sul,Roubo,0,,41544
+BO-2026-00062,04/01/2026,20:00,CPA,Regional Norte,Roubo,0,,0
+BO-2026-00063,21/01/2026,21:00,Tijucal,Regional Sul,Furto,0,,19116
+BO-2026-00064,05/01/2026,03:00,Pedra 90,Regional Sul,Roubo,0,,0
+BO-2026-00065,15/01/2026,15:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00066,26/01/2026,18:00,Grande Terceiro,Regional Leste,Furto,0,,0
+BO-2026-00067,03/01/2026,06:00,Centro,Regional Metropolitana,Lesão Corporal,0,,0
+BO-2026-00068,23/01/2026,05:00,Pedra 90,Regional Sul,Lesão Corporal,1,59,0
+BO-2026-00069,02/01/2026,15:00,Grande Terceiro,Regional Leste,Furto,0,,0
+BO-2026-00070,24/01/2026,00:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00071,20/01/2026,21:00,Coxipó,Regional Leste,Roubo,0,,0
+BO-2026-00072,26/01/2026,03:00,Porto,Regional Metropolitana,Lesão Corporal,0,,0
+BO-2026-00073,09/01/2026,06:00,Pedra 90,Regional Sul,Lesão Corporal,3,67,0
+BO-2026-00074,31/01/2026,21:00,Grande Terceiro,Regional Leste,Lesão Corporal,2,54,0
+BO-2026-00075,10/01/2026,02:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00076,18/01/2026,18:00,Pedra 90,Regional Sul,Furto,0,,0
+BO-2026-00077,01/01/2026,14:00,Grande Terceiro,Regional Leste,Furto,0,,44528
+BO-2026-00078,09/01/2026,23:00,Grande Terceiro,Regional Leste,Furto,0,,0
+BO-2026-00079,22/01/2026,20:00,Coxipó,Regional Leste,Roubo,0,,0
+BO-2026-00080,17/01/2026,22:00,Centro,Regional Metropolitana,Latrocínio,3,30,0
+BO-2026-00081,10/01/2026,19:00,Centro,Regional Metropolitana,Homicídio,1,61,0
+BO-2026-00082,20/01/2026,22:00,Grande Terceiro,Regional Leste,Lesão Corporal,0,,0
+BO-2026-00083,01/01/2026,14:00,CPA,Regional Norte,Roubo,0,,25278
+BO-2026-00084,26/01/2026,01:00,Tijucal,Regional Sul,Furto,0,,0
+BO-2026-00085,10/01/2026,21:00,Coxipó,Regional Leste,Tráfico de Drogas,0,,40434
+BO-2026-00086,06/01/2026,20:00,CPA,Regional Norte,Roubo,0,,0
+BO-2026-00087,23/01/2026,09:00,Grande Terceiro,Regional Leste,Lesão Corporal,1,25,0
+BO-2026-00088,28/01/2026,14:00,Grande Terceiro,Regional Leste,Furto,0,,24886
+BO-2026-00089,18/01/2026,10:00,Tijucal,Regional Sul,Furto,0,,43870
+BO-2026-00090,14/01/2026,16:00,Jardim Leblon,Regional Norte,Furto,0,,16291
+BO-2026-00091,06/01/2026,15:00,CPA,Regional Norte,Furto,0,,28837
+BO-2026-00092,04/01/2026,15:00,Coxipó,Regional Leste,Roubo,0,,0
+BO-2026-00093,15/01/2026,18:00,Coxipó,Regional Leste,Roubo,0,,12796
+BO-2026-00094,05/01/2026,14:00,Coxipó,Regional Leste,Lesão Corporal,2,64,0
+BO-2026-00095,14/01/2026,21:00,Grande Terceiro,Regional Leste,Latrocínio,0,,0
+BO-2026-00096,09/01/2026,19:00,Porto,Regional Metropolitana,Furto,0,,0
+BO-2026-00097,23/01/2026,08:00,Coxipó,Regional Leste,Lesão Corporal,1,54,0
+BO-2026-00098,08/01/2026,19:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00099,07/01/2026,19:00,Grande Terceiro,Regional Leste,Tráfico de Drogas,0,,0
+BO-2026-00100,01/01/2026,22:00,Jardim Leblon,Regional Norte,Furto,0,,21155
+BO-2026-00101,20/01/2026,15:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00102,13/01/2026,19:00,Grande Terceiro,Regional Leste,Tráfico de Drogas,0,,0
+BO-2026-00103,14/01/2026,09:00,Tijucal,Regional Sul,Roubo,0,,0
+BO-2026-00104,04/01/2026,19:00,Centro,Regional Metropolitana,Furto,0,,0
+BO-2026-00105,19/01/2026,21:00,Centro,Regional Metropolitana,Tráfico de Drogas,0,,0
+BO-2026-00106,07/01/2026,22:00,CPA,Regional Norte,Furto,0,,17829
+BO-2026-00107,31/01/2026,17:00,Grande Terceiro,Regional Leste,Tráfico de Drogas,0,,41953
+BO-2026-00108,09/01/2026,23:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00109,13/01/2026,02:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00110,03/01/2026,10:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00111,18/01/2026,09:00,Tijucal,Regional Sul,Roubo,0,,38834
+BO-2026-00112,30/01/2026,18:00,Tijucal,Regional Sul,Roubo,0,,0
+BO-2026-00113,21/01/2026,22:00,CPA,Regional Norte,Lesão Corporal,1,43,0
+BO-2026-00114,04/01/2026,09:00,Porto,Regional Metropolitana,Furto,0,,0
+BO-2026-00115,03/01/2026,21:00,Centro,Regional Metropolitana,Furto,0,,0
+BO-2026-00116,22/01/2026,11:00,Pedra 90,Regional Sul,Tráfico de Drogas,0,,0
+BO-2026-00117,28/01/2026,12:00,Tijucal,Regional Sul,Furto,0,,36661
+BO-2026-00118,30/01/2026,19:00,Centro,Regional Metropolitana,Furto,0,,0
+BO-2026-00119,04/01/2026,09:00,Pedra 90,Regional Sul,Roubo,0,,0
+BO-2026-00120,12/01/2026,06:00,CPA,Regional Norte,Lesão Corporal,1,58,0
+BO-2026-00121,27/01/2026,14:00,Coxipó,Regional Leste,Furto,0,,0
+BO-2026-00122,24/01/2026,21:00,Jardim Leblon,Regional Norte,Tráfico de Drogas,0,,0
+BO-2026-00123,24/01/2026,20:00,Porto,Regional Metropolitana,Lesão Corporal,1,67,0
+BO-2026-00124,09/01/2026,21:00,Jardim Leblon,Regional Norte,Tráfico de Drogas,0,,0
+BO-2026-00125,23/01/2026,19:00,Centro,Regional Metropolitana,Roubo,0,,0
+BO-2026-00126,01/01/2026,19:00,Tijucal,Regional Sul,Lesão Corporal,1,31,0
+BO-2026-00127,09/01/2026,20:00,CPA,Regional Norte,Furto,0,,0
+BO-2026-00128,02/01/2026,21:00,Centro,Regional Metropolitana,Lesão Corporal,3,34,0
+BO-2026-00129,15/01/2026,20:00,CPA,Regional Norte,Roubo,0,,0
+BO-2026-00130,17/01/2026,23:00,Coxipó,Regional Leste,Furto,0,,27858

@@ -1,0 +1,577 @@
+﻿Ano_Mes,Bairro,Regional,Tipo_Ocorrencia,Ocorrencias,Vitimas,Valor_Apreendido_RS,Tempo_Resposta_Medio_Min
+2025-02,Centro,Regional Metropolitana,Homicídio,4,4,0,6.6
+2025-02,Centro,Regional Metropolitana,Latrocínio,2,2,3373,6.3
+2025-02,Centro,Regional Metropolitana,Roubo,21,1,14027,12.4
+2025-02,Centro,Regional Metropolitana,Furto,32,2,27688,23.6
+2025-02,Centro,Regional Metropolitana,Tráfico de Drogas,8,0,9070,22.8
+2025-02,Centro,Regional Metropolitana,Lesão Corporal,10,9,0,24.8
+2025-02,Coxipó,Regional Leste,Homicídio,6,5,0,9.6
+2025-02,Coxipó,Regional Leste,Latrocínio,2,2,3881,6.7
+2025-02,Coxipó,Regional Leste,Roubo,40,2,41428,27.8
+2025-02,Coxipó,Regional Leste,Furto,43,2,62859,13.9
+2025-02,Coxipó,Regional Leste,Tráfico de Drogas,15,1,6728,24.0
+2025-02,Coxipó,Regional Leste,Lesão Corporal,13,12,0,24.7
+2025-02,CPA,Regional Norte,Homicídio,3,3,0,11.4
+2025-02,CPA,Regional Norte,Latrocínio,1,1,717,10.3
+2025-02,CPA,Regional Norte,Roubo,12,1,18093,26.8
+2025-02,CPA,Regional Norte,Furto,16,1,20790,14.3
+2025-02,CPA,Regional Norte,Tráfico de Drogas,6,0,3607,12.5
+2025-02,CPA,Regional Norte,Lesão Corporal,6,5,0,12.8
+2025-02,Pedra 90,Regional Sul,Homicídio,7,6,0,11.0
+2025-02,Pedra 90,Regional Sul,Latrocínio,3,3,3556,11.9
+2025-02,Pedra 90,Regional Sul,Roubo,45,2,42711,20.5
+2025-02,Pedra 90,Regional Sul,Furto,56,3,121928,21.6
+2025-02,Pedra 90,Regional Sul,Tráfico de Drogas,22,1,24335,11.4
+2025-02,Pedra 90,Regional Sul,Lesão Corporal,20,18,0,21.2
+2025-02,Tijucal,Regional Sul,Homicídio,4,4,0,11.1
+2025-02,Tijucal,Regional Sul,Latrocínio,2,2,2770,10.3
+2025-02,Tijucal,Regional Sul,Roubo,22,1,19398,18.7
+2025-02,Tijucal,Regional Sul,Furto,27,1,16083,10.8
+2025-02,Tijucal,Regional Sul,Tráfico de Drogas,9,0,6634,19.9
+2025-02,Tijucal,Regional Sul,Lesão Corporal,11,10,0,24.6
+2025-02,Jardim Leblon,Regional Norte,Homicídio,5,4,0,10.1
+2025-02,Jardim Leblon,Regional Norte,Latrocínio,2,2,3206,6.8
+2025-02,Jardim Leblon,Regional Norte,Roubo,39,2,59488,12.2
+2025-02,Jardim Leblon,Regional Norte,Furto,53,3,58618,15.5
+2025-02,Jardim Leblon,Regional Norte,Tráfico de Drogas,17,1,34831,18.2
+2025-02,Jardim Leblon,Regional Norte,Lesão Corporal,16,14,0,16.2
+2025-02,Porto,Regional Metropolitana,Homicídio,7,6,0,9.9
+2025-02,Porto,Regional Metropolitana,Latrocínio,3,3,2727,7.6
+2025-02,Porto,Regional Metropolitana,Roubo,43,2,56075,17.7
+2025-02,Porto,Regional Metropolitana,Furto,49,2,71203,17.2
+2025-02,Porto,Regional Metropolitana,Tráfico de Drogas,22,1,32522,18.4
+2025-02,Porto,Regional Metropolitana,Lesão Corporal,16,14,0,25.8
+2025-02,Grande Terceiro,Regional Leste,Homicídio,6,5,0,11.9
+2025-02,Grande Terceiro,Regional Leste,Latrocínio,3,3,6465,6.4
+2025-02,Grande Terceiro,Regional Leste,Roubo,30,2,39181,12.0
+2025-02,Grande Terceiro,Regional Leste,Furto,40,2,36459,20.5
+2025-02,Grande Terceiro,Regional Leste,Tráfico de Drogas,18,1,18970,11.0
+2025-02,Grande Terceiro,Regional Leste,Lesão Corporal,16,14,0,21.6
+2025-03,Centro,Regional Metropolitana,Homicídio,3,3,0,10.8
+2025-03,Centro,Regional Metropolitana,Latrocínio,1,1,723,8.1
+2025-03,Centro,Regional Metropolitana,Roubo,21,1,17237,19.9
+2025-03,Centro,Regional Metropolitana,Furto,37,2,18217,10.6
+2025-03,Centro,Regional Metropolitana,Tráfico de Drogas,13,1,13132,25.7
+2025-03,Centro,Regional Metropolitana,Lesão Corporal,9,8,0,19.9
+2025-03,Coxipó,Regional Leste,Homicídio,6,5,0,10.1
+2025-03,Coxipó,Regional Leste,Latrocínio,2,2,3729,11.1
+2025-03,Coxipó,Regional Leste,Roubo,33,2,50267,21.8
+2025-03,Coxipó,Regional Leste,Furto,53,3,88763,22.5
+2025-03,Coxipó,Regional Leste,Tráfico de Drogas,19,1,32501,26.1
+2025-03,Coxipó,Regional Leste,Lesão Corporal,13,12,0,12.1
+2025-03,CPA,Regional Norte,Homicídio,2,2,0,9.9
+2025-03,CPA,Regional Norte,Latrocínio,1,1,1519,8.5
+2025-03,CPA,Regional Norte,Roubo,15,1,12225,25.2
+2025-03,CPA,Regional Norte,Furto,15,1,16360,20.1
+2025-03,CPA,Regional Norte,Tráfico de Drogas,6,0,5749,10.9
+2025-03,CPA,Regional Norte,Lesão Corporal,5,4,0,25.7
+2025-03,Pedra 90,Regional Sul,Homicídio,7,6,0,10.8
+2025-03,Pedra 90,Regional Sul,Latrocínio,3,3,4287,10.2
+2025-03,Pedra 90,Regional Sul,Roubo,39,2,40789,14.2
+2025-03,Pedra 90,Regional Sul,Furto,48,2,93162,26.2
+2025-03,Pedra 90,Regional Sul,Tráfico de Drogas,21,1,21442,11.8
+2025-03,Pedra 90,Regional Sul,Lesão Corporal,15,14,0,26.1
+2025-03,Tijucal,Regional Sul,Homicídio,5,4,0,9.6
+2025-03,Tijucal,Regional Sul,Latrocínio,2,2,1083,6.5
+2025-03,Tijucal,Regional Sul,Roubo,31,2,47479,12.0
+2025-03,Tijucal,Regional Sul,Furto,40,2,24745,20.2
+2025-03,Tijucal,Regional Sul,Tráfico de Drogas,12,1,17053,27.1
+2025-03,Tijucal,Regional Sul,Lesão Corporal,12,11,0,23.0
+2025-03,Jardim Leblon,Regional Norte,Homicídio,7,6,0,7.2
+2025-03,Jardim Leblon,Regional Norte,Latrocínio,2,2,3253,7.6
+2025-03,Jardim Leblon,Regional Norte,Roubo,32,2,63933,10.7
+2025-03,Jardim Leblon,Regional Norte,Furto,40,2,61838,15.2
+2025-03,Jardim Leblon,Regional Norte,Tráfico de Drogas,15,1,8289,27.4
+2025-03,Jardim Leblon,Regional Norte,Lesão Corporal,15,14,0,16.2
+2025-03,Porto,Regional Metropolitana,Homicídio,9,8,0,7.4
+2025-03,Porto,Regional Metropolitana,Latrocínio,3,3,5614,10.2
+2025-03,Porto,Regional Metropolitana,Roubo,39,2,38279,23.5
+2025-03,Porto,Regional Metropolitana,Furto,57,3,106424,21.8
+2025-03,Porto,Regional Metropolitana,Tráfico de Drogas,19,1,41445,22.3
+2025-03,Porto,Regional Metropolitana,Lesão Corporal,18,16,0,18.4
+2025-03,Grande Terceiro,Regional Leste,Homicídio,6,5,0,10.6
+2025-03,Grande Terceiro,Regional Leste,Latrocínio,2,2,2084,9.2
+2025-03,Grande Terceiro,Regional Leste,Roubo,44,2,72356,13.9
+2025-03,Grande Terceiro,Regional Leste,Furto,55,3,85461,10.6
+2025-03,Grande Terceiro,Regional Leste,Tráfico de Drogas,19,1,18728,14.6
+2025-03,Grande Terceiro,Regional Leste,Lesão Corporal,17,15,0,14.0
+2025-04,Centro,Regional Metropolitana,Homicídio,4,4,0,8.9
+2025-04,Centro,Regional Metropolitana,Latrocínio,2,2,1732,6.9
+2025-04,Centro,Regional Metropolitana,Roubo,24,1,24805,13.2
+2025-04,Centro,Regional Metropolitana,Furto,25,1,39630,14.7
+2025-04,Centro,Regional Metropolitana,Tráfico de Drogas,9,0,7825,18.1
+2025-04,Centro,Regional Metropolitana,Lesão Corporal,10,9,0,21.8
+2025-04,Coxipó,Regional Leste,Homicídio,5,4,0,8.9
+2025-04,Coxipó,Regional Leste,Latrocínio,2,2,4097,9.6
+2025-04,Coxipó,Regional Leste,Roubo,30,2,50508,10.6
+2025-04,Coxipó,Regional Leste,Furto,37,2,56591,17.7
+2025-04,Coxipó,Regional Leste,Tráfico de Drogas,13,1,17382,10.1
+2025-04,Coxipó,Regional Leste,Lesão Corporal,12,11,0,11.0
+2025-04,CPA,Regional Norte,Homicídio,2,2,0,10.0
+2025-04,CPA,Regional Norte,Latrocínio,1,1,2186,11.1
+2025-04,CPA,Regional Norte,Roubo,11,1,16956,14.7
+2025-04,CPA,Regional Norte,Furto,14,1,6523,23.1
+2025-04,CPA,Regional Norte,Tráfico de Drogas,5,0,9278,25.4
+2025-04,CPA,Regional Norte,Lesão Corporal,4,4,0,15.0
+2025-04,Pedra 90,Regional Sul,Homicídio,7,6,0,9.5
+2025-04,Pedra 90,Regional Sul,Latrocínio,3,3,3872,9.3
+2025-04,Pedra 90,Regional Sul,Roubo,50,2,95407,11.2
+2025-04,Pedra 90,Regional Sul,Furto,59,3,40398,11.9
+2025-04,Pedra 90,Regional Sul,Tráfico de Drogas,17,1,32943,21.3
+2025-04,Pedra 90,Regional Sul,Lesão Corporal,20,18,0,27.8
+2025-04,Tijucal,Regional Sul,Homicídio,4,4,0,10.3
+2025-04,Tijucal,Regional Sul,Latrocínio,2,2,3443,6.2
+2025-04,Tijucal,Regional Sul,Roubo,25,1,27252,26.5
+2025-04,Tijucal,Regional Sul,Furto,31,2,66666,13.9
+2025-04,Tijucal,Regional Sul,Tráfico de Drogas,10,0,20281,18.7
+2025-04,Tijucal,Regional Sul,Lesão Corporal,11,10,0,25.0
+2025-04,Jardim Leblon,Regional Norte,Homicídio,5,4,0,6.8
+2025-04,Jardim Leblon,Regional Norte,Latrocínio,3,3,1796,10.6
+2025-04,Jardim Leblon,Regional Norte,Roubo,40,2,75762,21.4
+2025-04,Jardim Leblon,Regional Norte,Furto,49,2,40497,21.1
+2025-04,Jardim Leblon,Regional Norte,Tráfico de Drogas,14,1,8251,23.5
+2025-04,Jardim Leblon,Regional Norte,Lesão Corporal,13,12,0,26.7
+2025-04,Porto,Regional Metropolitana,Homicídio,6,5,0,7.4
+2025-04,Porto,Regional Metropolitana,Latrocínio,4,4,3535,6.1
+2025-04,Porto,Regional Metropolitana,Roubo,50,2,63579,20.0
+2025-04,Porto,Regional Metropolitana,Furto,60,3,34418,25.6
+2025-04,Porto,Regional Metropolitana,Tráfico de Drogas,19,1,34322,11.0
+2025-04,Porto,Regional Metropolitana,Lesão Corporal,18,16,0,24.6
+2025-04,Grande Terceiro,Regional Leste,Homicídio,6,5,0,11.7
+2025-04,Grande Terceiro,Regional Leste,Latrocínio,2,2,3805,6.3
+2025-04,Grande Terceiro,Regional Leste,Roubo,41,2,19632,11.4
+2025-04,Grande Terceiro,Regional Leste,Furto,50,2,101533,19.6
+2025-04,Grande Terceiro,Regional Leste,Tráfico de Drogas,15,1,27340,12.6
+2025-04,Grande Terceiro,Regional Leste,Lesão Corporal,13,12,0,13.5
+2025-05,Centro,Regional Metropolitana,Homicídio,4,4,0,10.3
+2025-05,Centro,Regional Metropolitana,Latrocínio,2,2,2839,7.3
+2025-05,Centro,Regional Metropolitana,Roubo,24,1,25540,21.1
+2025-05,Centro,Regional Metropolitana,Furto,28,1,20842,16.5
+2025-05,Centro,Regional Metropolitana,Tráfico de Drogas,11,1,19195,14.7
+2025-05,Centro,Regional Metropolitana,Lesão Corporal,9,8,0,27.1
+2025-05,Coxipó,Regional Leste,Homicídio,6,5,0,11.6
+2025-05,Coxipó,Regional Leste,Latrocínio,2,2,3859,11.8
+2025-05,Coxipó,Regional Leste,Roubo,33,2,41530,27.3
+2025-05,Coxipó,Regional Leste,Furto,34,2,57025,12.2
+2025-05,Coxipó,Regional Leste,Tráfico de Drogas,13,1,14407,18.9
+2025-05,Coxipó,Regional Leste,Lesão Corporal,16,14,0,11.7
+2025-05,CPA,Regional Norte,Homicídio,2,2,0,9.5
+2025-05,CPA,Regional Norte,Latrocínio,1,1,1735,9.2
+2025-05,CPA,Regional Norte,Roubo,11,1,23550,10.2
+2025-05,CPA,Regional Norte,Furto,13,1,7657,23.3
+2025-05,CPA,Regional Norte,Tráfico de Drogas,5,0,7453,27.0
+2025-05,CPA,Regional Norte,Lesão Corporal,5,4,0,14.4
+2025-05,Pedra 90,Regional Sul,Homicídio,6,5,0,11.5
+2025-05,Pedra 90,Regional Sul,Latrocínio,3,3,5013,11.9
+2025-05,Pedra 90,Regional Sul,Roubo,42,2,45105,17.7
+2025-05,Pedra 90,Regional Sul,Furto,53,3,45128,12.2
+2025-05,Pedra 90,Regional Sul,Tráfico de Drogas,21,1,10858,20.2
+2025-05,Pedra 90,Regional Sul,Lesão Corporal,17,15,0,13.0
+2025-05,Tijucal,Regional Sul,Homicídio,4,4,0,11.1
+2025-05,Tijucal,Regional Sul,Latrocínio,2,2,3319,9.9
+2025-05,Tijucal,Regional Sul,Roubo,28,1,50262,24.8
+2025-05,Tijucal,Regional Sul,Furto,27,1,58288,27.9
+2025-05,Tijucal,Regional Sul,Tráfico de Drogas,12,1,17465,27.2
+2025-05,Tijucal,Regional Sul,Lesão Corporal,12,11,0,24.6
+2025-05,Jardim Leblon,Regional Norte,Homicídio,6,5,0,7.3
+2025-05,Jardim Leblon,Regional Norte,Latrocínio,2,2,1730,7.4
+2025-05,Jardim Leblon,Regional Norte,Roubo,38,2,75056,19.7
+2025-05,Jardim Leblon,Regional Norte,Furto,43,2,75783,24.8
+2025-05,Jardim Leblon,Regional Norte,Tráfico de Drogas,19,1,29579,17.2
+2025-05,Jardim Leblon,Regional Norte,Lesão Corporal,16,14,0,14.8
+2025-05,Porto,Regional Metropolitana,Homicídio,8,7,0,6.3
+2025-05,Porto,Regional Metropolitana,Latrocínio,3,3,5255,10.9
+2025-05,Porto,Regional Metropolitana,Roubo,49,2,99186,23.0
+2025-05,Porto,Regional Metropolitana,Furto,66,3,126126,23.2
+2025-05,Porto,Regional Metropolitana,Tráfico de Drogas,17,1,7658,19.3
+2025-05,Porto,Regional Metropolitana,Lesão Corporal,21,19,0,18.9
+2025-05,Grande Terceiro,Regional Leste,Homicídio,5,4,0,6.1
+2025-05,Grande Terceiro,Regional Leste,Latrocínio,3,3,3412,10.7
+2025-05,Grande Terceiro,Regional Leste,Roubo,39,2,65963,12.5
+2025-05,Grande Terceiro,Regional Leste,Furto,46,2,49327,23.6
+2025-05,Grande Terceiro,Regional Leste,Tráfico de Drogas,14,1,8557,16.9
+2025-05,Grande Terceiro,Regional Leste,Lesão Corporal,16,14,0,17.5
+2025-06,Centro,Regional Metropolitana,Homicídio,4,4,0,11.9
+2025-06,Centro,Regional Metropolitana,Latrocínio,1,1,1797,9.4
+2025-06,Centro,Regional Metropolitana,Roubo,30,2,26717,10.1
+2025-06,Centro,Regional Metropolitana,Furto,34,2,71468,10.3
+2025-06,Centro,Regional Metropolitana,Tráfico de Drogas,10,0,8894,21.8
+2025-06,Centro,Regional Metropolitana,Lesão Corporal,11,10,0,20.1
+2025-06,Coxipó,Regional Leste,Homicídio,7,6,0,6.1
+2025-06,Coxipó,Regional Leste,Latrocínio,2,2,2692,6.9
+2025-06,Coxipó,Regional Leste,Roubo,40,2,25952,27.9
+2025-06,Coxipó,Regional Leste,Furto,41,2,27853,14.8
+2025-06,Coxipó,Regional Leste,Tráfico de Drogas,18,1,25603,14.0
+2025-06,Coxipó,Regional Leste,Lesão Corporal,17,15,0,11.4
+2025-06,CPA,Regional Norte,Homicídio,2,2,0,8.0
+2025-06,CPA,Regional Norte,Latrocínio,1,1,1389,10.0
+2025-06,CPA,Regional Norte,Roubo,13,1,16973,23.2
+2025-06,CPA,Regional Norte,Furto,13,1,27223,26.5
+2025-06,CPA,Regional Norte,Tráfico de Drogas,5,0,6465,18.0
+2025-06,CPA,Regional Norte,Lesão Corporal,4,4,0,11.5
+2025-06,Pedra 90,Regional Sul,Homicídio,6,5,0,8.1
+2025-06,Pedra 90,Regional Sul,Latrocínio,4,4,1601,11.9
+2025-06,Pedra 90,Regional Sul,Roubo,43,2,18959,20.7
+2025-06,Pedra 90,Regional Sul,Furto,71,4,131954,10.8
+2025-06,Pedra 90,Regional Sul,Tráfico de Drogas,17,1,26159,13.9
+2025-06,Pedra 90,Regional Sul,Lesão Corporal,22,20,0,10.9
+2025-06,Tijucal,Regional Sul,Homicídio,4,4,0,10.3
+2025-06,Tijucal,Regional Sul,Latrocínio,2,2,3281,11.4
+2025-06,Tijucal,Regional Sul,Roubo,33,2,26387,21.9
+2025-06,Tijucal,Regional Sul,Furto,37,2,74566,20.9
+2025-06,Tijucal,Regional Sul,Tráfico de Drogas,12,1,9501,22.0
+2025-06,Tijucal,Regional Sul,Lesão Corporal,12,11,0,16.8
+2025-06,Jardim Leblon,Regional Norte,Homicídio,7,6,0,10.9
+2025-06,Jardim Leblon,Regional Norte,Latrocínio,3,3,5156,11.3
+2025-06,Jardim Leblon,Regional Norte,Roubo,43,2,36887,16.9
+2025-06,Jardim Leblon,Regional Norte,Furto,44,2,27665,16.8
+2025-06,Jardim Leblon,Regional Norte,Tráfico de Drogas,14,1,27335,10.1
+2025-06,Jardim Leblon,Regional Norte,Lesão Corporal,14,13,0,19.4
+2025-06,Porto,Regional Metropolitana,Homicídio,9,8,0,7.9
+2025-06,Porto,Regional Metropolitana,Latrocínio,3,3,3085,6.4
+2025-06,Porto,Regional Metropolitana,Roubo,55,3,49190,25.0
+2025-06,Porto,Regional Metropolitana,Furto,58,3,81921,12.2
+2025-06,Porto,Regional Metropolitana,Tráfico de Drogas,24,1,27436,12.4
+2025-06,Porto,Regional Metropolitana,Lesão Corporal,23,21,0,27.8
+2025-06,Grande Terceiro,Regional Leste,Homicídio,7,6,0,8.2
+2025-06,Grande Terceiro,Regional Leste,Latrocínio,3,3,4758,6.1
+2025-06,Grande Terceiro,Regional Leste,Roubo,35,2,54337,14.0
+2025-06,Grande Terceiro,Regional Leste,Furto,56,3,110252,12.5
+2025-06,Grande Terceiro,Regional Leste,Tráfico de Drogas,16,1,13575,12.5
+2025-06,Grande Terceiro,Regional Leste,Lesão Corporal,13,12,0,24.4
+2025-07,Centro,Regional Metropolitana,Homicídio,6,5,0,6.5
+2025-07,Centro,Regional Metropolitana,Latrocínio,2,2,2001,10.5
+2025-07,Centro,Regional Metropolitana,Roubo,32,2,42376,20.5
+2025-07,Centro,Regional Metropolitana,Furto,32,2,25114,27.7
+2025-07,Centro,Regional Metropolitana,Tráfico de Drogas,11,1,7845,26.3
+2025-07,Centro,Regional Metropolitana,Lesão Corporal,12,11,0,23.1
+2025-07,Coxipó,Regional Leste,Homicídio,7,6,0,8.8
+2025-07,Coxipó,Regional Leste,Latrocínio,2,2,3873,6.2
+2025-07,Coxipó,Regional Leste,Roubo,34,2,20091,10.4
+2025-07,Coxipó,Regional Leste,Furto,43,2,39294,16.2
+2025-07,Coxipó,Regional Leste,Tráfico de Drogas,15,1,16220,16.6
+2025-07,Coxipó,Regional Leste,Lesão Corporal,17,15,0,18.1
+2025-07,CPA,Regional Norte,Homicídio,2,2,0,9.0
+2025-07,CPA,Regional Norte,Latrocínio,1,1,957,6.3
+2025-07,CPA,Regional Norte,Roubo,11,1,13714,14.1
+2025-07,CPA,Regional Norte,Furto,16,1,19102,12.2
+2025-07,CPA,Regional Norte,Tráfico de Drogas,6,0,11147,14.9
+2025-07,CPA,Regional Norte,Lesão Corporal,5,4,0,14.6
+2025-07,Pedra 90,Regional Sul,Homicídio,11,10,0,10.4
+2025-07,Pedra 90,Regional Sul,Latrocínio,3,3,1296,11.5
+2025-07,Pedra 90,Regional Sul,Roubo,63,3,84383,12.3
+2025-07,Pedra 90,Regional Sul,Furto,78,4,169948,25.5
+2025-07,Pedra 90,Regional Sul,Tráfico de Drogas,25,1,50323,23.5
+2025-07,Pedra 90,Regional Sul,Lesão Corporal,19,17,0,24.8
+2025-07,Tijucal,Regional Sul,Homicídio,4,4,0,7.8
+2025-07,Tijucal,Regional Sul,Latrocínio,2,2,1263,11.4
+2025-07,Tijucal,Regional Sul,Roubo,31,2,13908,14.8
+2025-07,Tijucal,Regional Sul,Furto,43,2,27779,20.4
+2025-07,Tijucal,Regional Sul,Tráfico de Drogas,15,1,12120,19.8
+2025-07,Tijucal,Regional Sul,Lesão Corporal,15,14,0,25.7
+2025-07,Jardim Leblon,Regional Norte,Homicídio,7,6,0,7.4
+2025-07,Jardim Leblon,Regional Norte,Latrocínio,3,3,5910,10.2
+2025-07,Jardim Leblon,Regional Norte,Roubo,40,2,80805,24.2
+2025-07,Jardim Leblon,Regional Norte,Furto,61,3,26006,12.2
+2025-07,Jardim Leblon,Regional Norte,Tráfico de Drogas,19,1,16137,24.6
+2025-07,Jardim Leblon,Regional Norte,Lesão Corporal,20,18,0,20.4
+2025-07,Porto,Regional Metropolitana,Homicídio,8,7,0,8.1
+2025-07,Porto,Regional Metropolitana,Latrocínio,3,3,6383,11.6
+2025-07,Porto,Regional Metropolitana,Roubo,60,3,110446,25.7
+2025-07,Porto,Regional Metropolitana,Furto,70,4,115724,15.8
+2025-07,Porto,Regional Metropolitana,Tráfico de Drogas,21,1,10248,25.5
+2025-07,Porto,Regional Metropolitana,Lesão Corporal,22,20,0,21.8
+2025-07,Grande Terceiro,Regional Leste,Homicídio,6,5,0,7.9
+2025-07,Grande Terceiro,Regional Leste,Latrocínio,3,3,3345,8.9
+2025-07,Grande Terceiro,Regional Leste,Roubo,47,2,41933,19.1
+2025-07,Grande Terceiro,Regional Leste,Furto,44,2,23054,18.0
+2025-07,Grande Terceiro,Regional Leste,Tráfico de Drogas,17,1,18067,15.1
+2025-07,Grande Terceiro,Regional Leste,Lesão Corporal,20,18,0,24.3
+2025-08,Centro,Regional Metropolitana,Homicídio,4,4,0,10.4
+2025-08,Centro,Regional Metropolitana,Latrocínio,2,2,4147,11.0
+2025-08,Centro,Regional Metropolitana,Roubo,27,1,52665,11.2
+2025-08,Centro,Regional Metropolitana,Furto,37,2,22439,18.7
+2025-08,Centro,Regional Metropolitana,Tráfico de Drogas,12,1,20037,14.4
+2025-08,Centro,Regional Metropolitana,Lesão Corporal,8,7,0,18.7
+2025-08,Coxipó,Regional Leste,Homicídio,5,4,0,9.5
+2025-08,Coxipó,Regional Leste,Latrocínio,2,2,3427,7.4
+2025-08,Coxipó,Regional Leste,Roubo,30,2,51487,26.9
+2025-08,Coxipó,Regional Leste,Furto,44,2,27132,26.5
+2025-08,Coxipó,Regional Leste,Tráfico de Drogas,12,1,6015,17.8
+2025-08,Coxipó,Regional Leste,Lesão Corporal,11,10,0,26.7
+2025-08,CPA,Regional Norte,Homicídio,2,2,0,7.2
+2025-08,CPA,Regional Norte,Latrocínio,1,1,995,10.7
+2025-08,CPA,Regional Norte,Roubo,13,1,22631,18.3
+2025-08,CPA,Regional Norte,Furto,16,1,19673,27.9
+2025-08,CPA,Regional Norte,Tráfico de Drogas,4,0,6356,15.5
+2025-08,CPA,Regional Norte,Lesão Corporal,5,4,0,13.7
+2025-08,Pedra 90,Regional Sul,Homicídio,7,6,0,10.2
+2025-08,Pedra 90,Regional Sul,Latrocínio,3,3,3134,9.2
+2025-08,Pedra 90,Regional Sul,Roubo,55,3,118518,23.9
+2025-08,Pedra 90,Regional Sul,Furto,65,3,136084,24.4
+2025-08,Pedra 90,Regional Sul,Tráfico de Drogas,19,1,21363,24.1
+2025-08,Pedra 90,Regional Sul,Lesão Corporal,21,19,0,25.1
+2025-08,Tijucal,Regional Sul,Homicídio,5,4,0,10.8
+2025-08,Tijucal,Regional Sul,Latrocínio,2,2,4382,10.8
+2025-08,Tijucal,Regional Sul,Roubo,29,1,36786,15.4
+2025-08,Tijucal,Regional Sul,Furto,33,2,66951,24.1
+2025-08,Tijucal,Regional Sul,Tráfico de Drogas,13,1,10414,10.4
+2025-08,Tijucal,Regional Sul,Lesão Corporal,9,8,0,20.1
+2025-08,Jardim Leblon,Regional Norte,Homicídio,7,6,0,8.9
+2025-08,Jardim Leblon,Regional Norte,Latrocínio,3,3,1473,6.8
+2025-08,Jardim Leblon,Regional Norte,Roubo,33,2,65586,22.5
+2025-08,Jardim Leblon,Regional Norte,Furto,56,3,99151,18.0
+2025-08,Jardim Leblon,Regional Norte,Tráfico de Drogas,15,1,15717,25.7
+2025-08,Jardim Leblon,Regional Norte,Lesão Corporal,18,16,0,27.9
+2025-08,Porto,Regional Metropolitana,Homicídio,8,7,0,11.7
+2025-08,Porto,Regional Metropolitana,Latrocínio,3,3,3127,8.2
+2025-08,Porto,Regional Metropolitana,Roubo,47,2,53838,15.0
+2025-08,Porto,Regional Metropolitana,Furto,63,3,94831,13.6
+2025-08,Porto,Regional Metropolitana,Tráfico de Drogas,20,1,20463,26.3
+2025-08,Porto,Regional Metropolitana,Lesão Corporal,18,16,0,24.2
+2025-08,Grande Terceiro,Regional Leste,Homicídio,6,5,0,11.3
+2025-08,Grande Terceiro,Regional Leste,Latrocínio,2,2,3596,6.9
+2025-08,Grande Terceiro,Regional Leste,Roubo,35,2,47263,13.6
+2025-08,Grande Terceiro,Regional Leste,Furto,39,2,17628,22.4
+2025-08,Grande Terceiro,Regional Leste,Tráfico de Drogas,16,1,16753,13.3
+2025-08,Grande Terceiro,Regional Leste,Lesão Corporal,13,12,0,25.6
+2025-09,Centro,Regional Metropolitana,Homicídio,5,4,0,10.7
+2025-09,Centro,Regional Metropolitana,Latrocínio,2,2,3333,8.3
+2025-09,Centro,Regional Metropolitana,Roubo,21,1,15880,26.3
+2025-09,Centro,Regional Metropolitana,Furto,38,2,25170,18.0
+2025-09,Centro,Regional Metropolitana,Tráfico de Drogas,9,0,10879,24.3
+2025-09,Centro,Regional Metropolitana,Lesão Corporal,10,9,0,24.8
+2025-09,Coxipó,Regional Leste,Homicídio,6,5,0,10.5
+2025-09,Coxipó,Regional Leste,Latrocínio,2,2,3686,7.0
+2025-09,Coxipó,Regional Leste,Roubo,33,2,66533,25.0
+2025-09,Coxipó,Regional Leste,Furto,45,2,83498,22.2
+2025-09,Coxipó,Regional Leste,Tráfico de Drogas,16,1,11080,10.0
+2025-09,Coxipó,Regional Leste,Lesão Corporal,12,11,0,14.7
+2025-09,CPA,Regional Norte,Homicídio,2,2,0,6.3
+2025-09,CPA,Regional Norte,Latrocínio,1,1,2083,10.7
+2025-09,CPA,Regional Norte,Roubo,11,1,6365,20.4
+2025-09,CPA,Regional Norte,Furto,13,1,16704,14.5
+2025-09,CPA,Regional Norte,Tráfico de Drogas,4,0,3895,12.8
+2025-09,CPA,Regional Norte,Lesão Corporal,4,4,0,17.2
+2025-09,Pedra 90,Regional Sul,Homicídio,9,8,0,10.3
+2025-09,Pedra 90,Regional Sul,Latrocínio,3,3,4592,10.9
+2025-09,Pedra 90,Regional Sul,Roubo,43,2,78780,24.1
+2025-09,Pedra 90,Regional Sul,Furto,62,3,68015,11.9
+2025-09,Pedra 90,Regional Sul,Tráfico de Drogas,23,1,31392,10.2
+2025-09,Pedra 90,Regional Sul,Lesão Corporal,19,17,0,13.5
+2025-09,Tijucal,Regional Sul,Homicídio,5,4,0,8.2
+2025-09,Tijucal,Regional Sul,Latrocínio,2,2,4285,9.8
+2025-09,Tijucal,Regional Sul,Roubo,28,1,22778,23.9
+2025-09,Tijucal,Regional Sul,Furto,31,2,63276,16.7
+2025-09,Tijucal,Regional Sul,Tráfico de Drogas,10,0,12859,22.7
+2025-09,Tijucal,Regional Sul,Lesão Corporal,11,10,0,25.3
+2025-09,Jardim Leblon,Regional Norte,Homicídio,8,7,0,7.3
+2025-09,Jardim Leblon,Regional Norte,Latrocínio,3,3,2008,8.1
+2025-09,Jardim Leblon,Regional Norte,Roubo,36,2,56347,19.9
+2025-09,Jardim Leblon,Regional Norte,Furto,53,3,78494,16.2
+2025-09,Jardim Leblon,Regional Norte,Tráfico de Drogas,18,1,16663,13.1
+2025-09,Jardim Leblon,Regional Norte,Lesão Corporal,18,16,0,11.3
+2025-09,Porto,Regional Metropolitana,Homicídio,9,8,0,9.5
+2025-09,Porto,Regional Metropolitana,Latrocínio,4,4,4766,10.2
+2025-09,Porto,Regional Metropolitana,Roubo,40,2,27230,16.4
+2025-09,Porto,Regional Metropolitana,Furto,63,3,128170,14.0
+2025-09,Porto,Regional Metropolitana,Tráfico de Drogas,20,1,38636,25.0
+2025-09,Porto,Regional Metropolitana,Lesão Corporal,22,20,0,10.6
+2025-09,Grande Terceiro,Regional Leste,Homicídio,5,4,0,10.2
+2025-09,Grande Terceiro,Regional Leste,Latrocínio,3,3,3535,6.2
+2025-09,Grande Terceiro,Regional Leste,Roubo,35,2,30214,19.7
+2025-09,Grande Terceiro,Regional Leste,Furto,42,2,76535,22.3
+2025-09,Grande Terceiro,Regional Leste,Tráfico de Drogas,15,1,31021,25.2
+2025-09,Grande Terceiro,Regional Leste,Lesão Corporal,17,15,0,25.6
+2025-10,Centro,Regional Metropolitana,Homicídio,5,4,0,10.7
+2025-10,Centro,Regional Metropolitana,Latrocínio,2,2,2110,9.9
+2025-10,Centro,Regional Metropolitana,Roubo,29,1,49935,24.2
+2025-10,Centro,Regional Metropolitana,Furto,41,2,68986,22.6
+2025-10,Centro,Regional Metropolitana,Tráfico de Drogas,14,1,14931,17.3
+2025-10,Centro,Regional Metropolitana,Lesão Corporal,14,13,0,26.8
+2025-10,Coxipó,Regional Leste,Homicídio,5,4,0,8.6
+2025-10,Coxipó,Regional Leste,Latrocínio,3,3,1204,11.4
+2025-10,Coxipó,Regional Leste,Roubo,28,1,56708,27.2
+2025-10,Coxipó,Regional Leste,Furto,50,2,30993,23.6
+2025-10,Coxipó,Regional Leste,Tráfico de Drogas,14,1,28323,10.0
+2025-10,Coxipó,Regional Leste,Lesão Corporal,15,14,0,15.6
+2025-10,CPA,Regional Norte,Homicídio,2,2,0,9.7
+2025-10,CPA,Regional Norte,Latrocínio,1,1,1421,11.6
+2025-10,CPA,Regional Norte,Roubo,11,1,23791,16.2
+2025-10,CPA,Regional Norte,Furto,17,1,28747,19.9
+2025-10,CPA,Regional Norte,Tráfico de Drogas,5,0,5398,22.9
+2025-10,CPA,Regional Norte,Lesão Corporal,4,4,0,27.5
+2025-10,Pedra 90,Regional Sul,Homicídio,8,7,0,8.7
+2025-10,Pedra 90,Regional Sul,Latrocínio,3,3,1556,9.2
+2025-10,Pedra 90,Regional Sul,Roubo,47,2,24631,12.7
+2025-10,Pedra 90,Regional Sul,Furto,60,3,78855,20.2
+2025-10,Pedra 90,Regional Sul,Tráfico de Drogas,25,1,19171,23.0
+2025-10,Pedra 90,Regional Sul,Lesão Corporal,22,20,0,21.6
+2025-10,Tijucal,Regional Sul,Homicídio,6,5,0,10.1
+2025-10,Tijucal,Regional Sul,Latrocínio,2,2,4206,7.7
+2025-10,Tijucal,Regional Sul,Roubo,35,2,25711,19.9
+2025-10,Tijucal,Regional Sul,Furto,38,2,31245,15.8
+2025-10,Tijucal,Regional Sul,Tráfico de Drogas,12,1,9199,26.8
+2025-10,Tijucal,Regional Sul,Lesão Corporal,12,11,0,18.6
+2025-10,Jardim Leblon,Regional Norte,Homicídio,7,6,0,10.1
+2025-10,Jardim Leblon,Regional Norte,Latrocínio,2,2,2678,7.0
+2025-10,Jardim Leblon,Regional Norte,Roubo,52,3,28173,24.6
+2025-10,Jardim Leblon,Regional Norte,Furto,65,3,107276,20.3
+2025-10,Jardim Leblon,Regional Norte,Tráfico de Drogas,18,1,26990,12.8
+2025-10,Jardim Leblon,Regional Norte,Lesão Corporal,19,17,0,24.4
+2025-10,Porto,Regional Metropolitana,Homicídio,7,6,0,9.4
+2025-10,Porto,Regional Metropolitana,Latrocínio,4,4,2106,11.3
+2025-10,Porto,Regional Metropolitana,Roubo,56,3,122354,21.8
+2025-10,Porto,Regional Metropolitana,Furto,56,3,65399,19.3
+2025-10,Porto,Regional Metropolitana,Tráfico de Drogas,23,1,15044,26.3
+2025-10,Porto,Regional Metropolitana,Lesão Corporal,23,21,0,20.7
+2025-10,Grande Terceiro,Regional Leste,Homicídio,6,5,0,7.3
+2025-10,Grande Terceiro,Regional Leste,Latrocínio,2,2,1782,7.2
+2025-10,Grande Terceiro,Regional Leste,Roubo,37,2,22169,20.5
+2025-10,Grande Terceiro,Regional Leste,Furto,53,3,37966,15.6
+2025-10,Grande Terceiro,Regional Leste,Tráfico de Drogas,20,1,28903,26.7
+2025-10,Grande Terceiro,Regional Leste,Lesão Corporal,15,14,0,27.9
+2025-11,Centro,Regional Metropolitana,Homicídio,4,4,0,11.4
+2025-11,Centro,Regional Metropolitana,Latrocínio,2,2,4158,7.8
+2025-11,Centro,Regional Metropolitana,Roubo,30,2,45052,18.9
+2025-11,Centro,Regional Metropolitana,Furto,38,2,28963,25.7
+2025-11,Centro,Regional Metropolitana,Tráfico de Drogas,16,1,7275,17.4
+2025-11,Centro,Regional Metropolitana,Lesão Corporal,14,13,0,11.4
+2025-11,Coxipó,Regional Leste,Homicídio,7,6,0,11.2
+2025-11,Coxipó,Regional Leste,Latrocínio,2,2,3949,8.9
+2025-11,Coxipó,Regional Leste,Roubo,36,2,19714,16.5
+2025-11,Coxipó,Regional Leste,Furto,37,2,54825,17.1
+2025-11,Coxipó,Regional Leste,Tráfico de Drogas,18,1,24154,15.1
+2025-11,Coxipó,Regional Leste,Lesão Corporal,16,14,0,20.0
+2025-11,CPA,Regional Norte,Homicídio,2,2,0,11.3
+2025-11,CPA,Regional Norte,Latrocínio,1,1,1227,6.9
+2025-11,CPA,Regional Norte,Roubo,12,1,23921,16.1
+2025-11,CPA,Regional Norte,Furto,16,1,7999,25.5
+2025-11,CPA,Regional Norte,Tráfico de Drogas,4,0,3507,22.9
+2025-11,CPA,Regional Norte,Lesão Corporal,4,4,0,11.3
+2025-11,Pedra 90,Regional Sul,Homicídio,9,8,0,7.5
+2025-11,Pedra 90,Regional Sul,Latrocínio,3,3,5147,9.3
+2025-11,Pedra 90,Regional Sul,Roubo,62,3,60886,19.5
+2025-11,Pedra 90,Regional Sul,Furto,80,4,137418,16.3
+2025-11,Pedra 90,Regional Sul,Tráfico de Drogas,24,1,30088,12.7
+2025-11,Pedra 90,Regional Sul,Lesão Corporal,24,22,0,14.4
+2025-11,Tijucal,Regional Sul,Homicídio,6,5,0,7.9
+2025-11,Tijucal,Regional Sul,Latrocínio,2,2,3631,10.7
+2025-11,Tijucal,Regional Sul,Roubo,37,2,70875,15.4
+2025-11,Tijucal,Regional Sul,Furto,42,2,73861,21.4
+2025-11,Tijucal,Regional Sul,Tráfico de Drogas,17,1,10107,11.5
+2025-11,Tijucal,Regional Sul,Lesão Corporal,15,14,0,18.8
+2025-11,Jardim Leblon,Regional Norte,Homicídio,10,9,0,6.5
+2025-11,Jardim Leblon,Regional Norte,Latrocínio,3,3,1305,7.5
+2025-11,Jardim Leblon,Regional Norte,Roubo,42,2,26155,26.1
+2025-11,Jardim Leblon,Regional Norte,Furto,68,3,137885,14.8
+2025-11,Jardim Leblon,Regional Norte,Tráfico de Drogas,25,1,44480,16.2
+2025-11,Jardim Leblon,Regional Norte,Lesão Corporal,23,21,0,26.6
+2025-11,Porto,Regional Metropolitana,Homicídio,10,9,0,10.2
+2025-11,Porto,Regional Metropolitana,Latrocínio,4,4,4156,7.2
+2025-11,Porto,Regional Metropolitana,Roubo,53,3,93236,16.6
+2025-11,Porto,Regional Metropolitana,Furto,80,4,166649,10.7
+2025-11,Porto,Regional Metropolitana,Tráfico de Drogas,23,1,36922,20.9
+2025-11,Porto,Regional Metropolitana,Lesão Corporal,21,19,0,10.2
+2025-11,Grande Terceiro,Regional Leste,Homicídio,8,7,0,8.5
+2025-11,Grande Terceiro,Regional Leste,Latrocínio,3,3,3495,10.8
+2025-11,Grande Terceiro,Regional Leste,Roubo,49,2,37785,27.7
+2025-11,Grande Terceiro,Regional Leste,Furto,59,3,125616,16.3
+2025-11,Grande Terceiro,Regional Leste,Tráfico de Drogas,20,1,10489,21.6
+2025-11,Grande Terceiro,Regional Leste,Lesão Corporal,16,14,0,16.5
+2025-12,Centro,Regional Metropolitana,Homicídio,6,5,0,10.5
+2025-12,Centro,Regional Metropolitana,Latrocínio,2,2,2367,9.9
+2025-12,Centro,Regional Metropolitana,Roubo,35,2,67858,22.1
+2025-12,Centro,Regional Metropolitana,Furto,35,2,21500,11.2
+2025-12,Centro,Regional Metropolitana,Tráfico de Drogas,16,1,11375,10.5
+2025-12,Centro,Regional Metropolitana,Lesão Corporal,14,13,0,10.4
+2025-12,Coxipó,Regional Leste,Homicídio,6,5,0,6.6
+2025-12,Coxipó,Regional Leste,Latrocínio,2,2,1750,9.3
+2025-12,Coxipó,Regional Leste,Roubo,40,2,20119,14.8
+2025-12,Coxipó,Regional Leste,Furto,48,2,54566,19.1
+2025-12,Coxipó,Regional Leste,Tráfico de Drogas,16,1,21077,15.1
+2025-12,Coxipó,Regional Leste,Lesão Corporal,15,14,0,25.2
+2025-12,CPA,Regional Norte,Homicídio,2,2,0,11.7
+2025-12,CPA,Regional Norte,Latrocínio,1,1,1984,9.5
+2025-12,CPA,Regional Norte,Roubo,12,1,10689,18.4
+2025-12,CPA,Regional Norte,Furto,12,1,7527,15.1
+2025-12,CPA,Regional Norte,Tráfico de Drogas,5,0,10731,10.9
+2025-12,CPA,Regional Norte,Lesão Corporal,4,4,0,12.9
+2025-12,Pedra 90,Regional Sul,Homicídio,11,10,0,8.5
+2025-12,Pedra 90,Regional Sul,Latrocínio,3,3,2138,8.5
+2025-12,Pedra 90,Regional Sul,Roubo,60,3,46622,17.2
+2025-12,Pedra 90,Regional Sul,Furto,73,4,135223,23.4
+2025-12,Pedra 90,Regional Sul,Tráfico de Drogas,30,2,31391,25.7
+2025-12,Pedra 90,Regional Sul,Lesão Corporal,22,20,0,24.1
+2025-12,Tijucal,Regional Sul,Homicídio,5,4,0,11.6
+2025-12,Tijucal,Regional Sul,Latrocínio,2,2,2598,11.7
+2025-12,Tijucal,Regional Sul,Roubo,38,2,63407,26.1
+2025-12,Tijucal,Regional Sul,Furto,35,2,40087,26.3
+2025-12,Tijucal,Regional Sul,Tráfico de Drogas,14,1,28600,13.8
+2025-12,Tijucal,Regional Sul,Lesão Corporal,15,14,0,13.0
+2025-12,Jardim Leblon,Regional Norte,Homicídio,8,7,0,10.4
+2025-12,Jardim Leblon,Regional Norte,Latrocínio,3,3,5060,7.6
+2025-12,Jardim Leblon,Regional Norte,Roubo,41,2,55270,12.0
+2025-12,Jardim Leblon,Regional Norte,Furto,57,3,65441,13.5
+2025-12,Jardim Leblon,Regional Norte,Tráfico de Drogas,22,1,24686,21.9
+2025-12,Jardim Leblon,Regional Norte,Lesão Corporal,23,21,0,16.1
+2025-12,Porto,Regional Metropolitana,Homicídio,8,7,0,10.2
+2025-12,Porto,Regional Metropolitana,Latrocínio,4,4,6866,11.6
+2025-12,Porto,Regional Metropolitana,Roubo,52,3,77098,17.8
+2025-12,Porto,Regional Metropolitana,Furto,71,4,155045,27.1
+2025-12,Porto,Regional Metropolitana,Tráfico de Drogas,25,1,47803,12.4
+2025-12,Porto,Regional Metropolitana,Lesão Corporal,22,20,0,15.2
+2025-12,Grande Terceiro,Regional Leste,Homicídio,7,6,0,8.0
+2025-12,Grande Terceiro,Regional Leste,Latrocínio,2,2,1605,10.1
+2025-12,Grande Terceiro,Regional Leste,Roubo,41,2,23360,24.0
+2025-12,Grande Terceiro,Regional Leste,Furto,66,3,111937,19.0
+2025-12,Grande Terceiro,Regional Leste,Tráfico de Drogas,17,1,29854,16.8
+2025-12,Grande Terceiro,Regional Leste,Lesão Corporal,18,16,0,11.6
+2026-01,Centro,Regional Metropolitana,Homicídio,4,4,0,7.4
+2026-01,Centro,Regional Metropolitana,Latrocínio,2,2,3097,7.6
+2026-01,Centro,Regional Metropolitana,Roubo,30,2,16661,23.1
+2026-01,Centro,Regional Metropolitana,Furto,38,2,30716,23.6
+2026-01,Centro,Regional Metropolitana,Tráfico de Drogas,12,1,25716,21.0
+2026-01,Centro,Regional Metropolitana,Lesão Corporal,13,12,0,18.6
+2026-01,Coxipó,Regional Leste,Homicídio,6,5,0,11.3
+2026-01,Coxipó,Regional Leste,Latrocínio,2,2,2824,11.4
+2026-01,Coxipó,Regional Leste,Roubo,26,1,15154,17.5
+2026-01,Coxipó,Regional Leste,Furto,49,2,30238,19.6
+2026-01,Coxipó,Regional Leste,Tráfico de Drogas,16,1,29035,11.2
+2026-01,Coxipó,Regional Leste,Lesão Corporal,15,14,0,20.9
+2026-01,CPA,Regional Norte,Homicídio,2,2,0,8.4
+2026-01,CPA,Regional Norte,Latrocínio,1,1,1094,6.0
+2026-01,CPA,Regional Norte,Roubo,9,0,9290,11.8
+2026-01,CPA,Regional Norte,Furto,15,1,27809,15.3
+2026-01,CPA,Regional Norte,Tráfico de Drogas,5,0,2503,22.3
+2026-01,CPA,Regional Norte,Lesão Corporal,5,4,0,15.9
+2026-01,Pedra 90,Regional Sul,Homicídio,12,11,0,6.4
+2026-01,Pedra 90,Regional Sul,Latrocínio,4,4,6468,7.9
+2026-01,Pedra 90,Regional Sul,Roubo,60,3,86477,27.1
+2026-01,Pedra 90,Regional Sul,Furto,74,4,59414,12.0
+2026-01,Pedra 90,Regional Sul,Tráfico de Drogas,30,2,47568,15.6
+2026-01,Pedra 90,Regional Sul,Lesão Corporal,21,19,0,12.7
+2026-01,Tijucal,Regional Sul,Homicídio,5,4,0,10.6
+2026-01,Tijucal,Regional Sul,Latrocínio,2,2,3617,10.2
+2026-01,Tijucal,Regional Sul,Roubo,30,2,63022,16.2
+2026-01,Tijucal,Regional Sul,Furto,39,2,75542,21.3
+2026-01,Tijucal,Regional Sul,Tráfico de Drogas,14,1,7758,13.9
+2026-01,Tijucal,Regional Sul,Lesão Corporal,11,10,0,17.8
+2026-01,Jardim Leblon,Regional Norte,Homicídio,9,8,0,7.5
+2026-01,Jardim Leblon,Regional Norte,Latrocínio,3,3,5625,11.6
+2026-01,Jardim Leblon,Regional Norte,Roubo,57,3,91060,13.4
+2026-01,Jardim Leblon,Regional Norte,Furto,50,2,51835,20.4
+2026-01,Jardim Leblon,Regional Norte,Tráfico de Drogas,21,1,14090,10.0
+2026-01,Jardim Leblon,Regional Norte,Lesão Corporal,23,21,0,10.3
+2026-01,Porto,Regional Metropolitana,Homicídio,8,7,0,11.3
+2026-01,Porto,Regional Metropolitana,Latrocínio,4,4,7192,10.9
+2026-01,Porto,Regional Metropolitana,Roubo,54,3,106476,11.4
+2026-01,Porto,Regional Metropolitana,Furto,55,3,57900,20.1
+2026-01,Porto,Regional Metropolitana,Tráfico de Drogas,19,1,27548,12.1
+2026-01,Porto,Regional Metropolitana,Lesão Corporal,25,22,0,24.4
+2026-01,Grande Terceiro,Regional Leste,Homicídio,9,8,0,9.0
+2026-01,Grande Terceiro,Regional Leste,Latrocínio,3,3,5524,8.9
+2026-01,Grande Terceiro,Regional Leste,Roubo,48,2,54789,14.7
+2026-01,Grande Terceiro,Regional Leste,Furto,46,2,82196,10.5
+2026-01,Grande Terceiro,Regional Leste,Tráfico de Drogas,16,1,23700,11.0
+2026-01,Grande Terceiro,Regional Leste,Lesão Corporal,18,16,0,13.4
